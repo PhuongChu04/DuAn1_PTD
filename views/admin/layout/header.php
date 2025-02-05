@@ -26,9 +26,27 @@
 
      <!-- Theme Config js (Require in all Page) -->
      <script src="admin/assets_admin/js/config.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     <!-- Toastr CSS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 </head>
 
 <body>
+<?php
+    if (isset($_SESSION['error'])) {
+        echo "<script type='text/javascript'>
+            toastr.warning('{$_SESSION['error']}');
+        </script>";
+        unset($_SESSION['error']);
+    }
+    if (isset($_SESSION['success'])) {
+        echo "<script type='text/javascript'>
+            toastr.success('{$_SESSION['success']}');
+        </script>";
+        unset($_SESSION['success']);
+    }
+    ?>
 
      <!-- START Wrapper -->
      <div class="wrapper">

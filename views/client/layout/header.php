@@ -17,6 +17,10 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="client/css/plugins/swiper.min.css" type="text/css">
   <link rel="stylesheet" href="client/css/style.css" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     <!-- Toastr CSS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,6 +35,20 @@
 
 
 <body>
+<?php
+    if (isset($_SESSION['error'])) {
+        echo "<script type='text/javascript'>
+            toastr.warning('{$_SESSION['error']}');
+        </script>";
+        unset($_SESSION['error']);
+    }
+    if (isset($_SESSION['success'])) {
+        echo "<script type='text/javascript'>
+            toastr.success('{$_SESSION['success']}');
+        </script>";
+        unset($_SESSION['success']);
+    }
+    ?>
   <svg class="d-none">
     <symbol id="icon_nav" viewBox="0 0 25 18">
       <rect width="25" height="2"/><rect y="8" width="20" height="2"/><rect y="16" width="25" height="2"/>
@@ -425,7 +443,7 @@
           <ul class="navigation__list list-unstyled d-flex">
             <li class="navigation__item">
               <a href="#" class="navigation__link">Home</a>
-              <div class="box-menu" style="width: 800px;">
+              <!-- <div class="box-menu" style="width: 800px;">
                 <div class="col pe-4">
                   <ul class="sub-menu__list list-unstyled">
                     <li class="sub-menu__item"><a href="index.html" class="menu-link menu-link_us-s">Home 1</a></li>
@@ -468,14 +486,14 @@
                     <li class="sub-menu__item"><a href="https://uomo-html.flexkitux.com/Demo23/index.html" class="menu-link menu-link_us-s">Home 23</a></li>
                   </ul>
                 </div>
-              </div><!-- /.box-menu -->
+              </div>/.box-menu -->
             </li>
             <li class="navigation__item">
               <a href="#" class="navigation__link">Shop</a>
               <div class="mega-menu">
                 <div class="container d-flex">
                   <div class="col pe-4">
-                    <a href="#" class="sub-menu__title">Shop List</a>
+                    <!-- <a href="#" class="sub-menu__title">Shop List</a>
                     <ul class="sub-menu__list list-unstyled">
                       <li class="sub-menu__item"><a href="shop1.html" class="menu-link menu-link_us-s">Shop List V1</a></li>
                       <li class="sub-menu__item"><a href="shop2.html" class="menu-link menu-link_us-s">Shop List V2</a></li>
@@ -488,9 +506,9 @@
                       <li class="sub-menu__item"><a href="shop9.html" class="menu-link menu-link_us-s">Shop List V9</a></li>
                       <li class="sub-menu__item"><a href="shop10.html" class="menu-link menu-link_us-s">Shop Item Style</a></li>
                       <li class="sub-menu__item"><a href="shop11.html" class="menu-link menu-link_us-s">Horizontal Scroll</a></li>
-                    </ul>
+                    </ul> -->
                   </div>
-
+<!-- 
                   <div class="col pe-4">
                     <a href="#" class="sub-menu__title">Shop Detail</a>
                     <ul class="sub-menu__list list-unstyled">
@@ -506,8 +524,8 @@
                       <li class="sub-menu__item"><a href="product15_v10.html" class="menu-link menu-link_us-s">Shop Detail V10</a></li>
                       <li class="sub-menu__item"><a href="product16_v11.html" class="menu-link menu-link_us-s">Shop Detail V11</a></li>
                     </ul>
-                  </div>
-
+                  </div> -->
+<!-- 
                   <div class="col pe-4">
                     <a href="#" class="sub-menu__title">Other Pages</a>
                     <ul class="sub-menu__list list-unstyled">
@@ -523,7 +541,7 @@
                       <li class="sub-menu__item"><a href="shop_order_complete.html" class="menu-link menu-link_us-s">Order Complete</a></li>
                       <li class="sub-menu__item"><a href="shop_order_tracking.html" class="menu-link menu-link_us-s">Order Tracking</a></li>
                     </ul>
-                  </div>
+                  </div> -->
 
                   <div class="mega-menu__media col">
                     <div class="position-relative">
@@ -549,7 +567,7 @@
             </li>
             <li class="navigation__item">
               <a href="#" class="navigation__link">Pages</a>
-              <ul class="default-menu list-unstyled">
+              <!-- <ul class="default-menu list-unstyled">
                 <li class="sub-menu__item"><a href="account_dashboard.html" class="menu-link menu-link_us-s">My Account</a></li>
                 <li class="sub-menu__item"><a href="login_register.html" class="menu-link menu-link_us-s">Login / Register</a></li>
                 <li class="sub-menu__item"><a href="store_location.html" class="menu-link menu-link_us-s">Store Locator</a></li>
@@ -558,7 +576,7 @@
                 <li class="sub-menu__item"><a href="terms.html" class="menu-link menu-link_us-s">Terms</a></li>
                 <li class="sub-menu__item"><a href="404.html" class="menu-link menu-link_us-s">404 Error</a></li>
                 <li class="sub-menu__item"><a href="coming_soon.html" class="menu-link menu-link_us-s">Coming Soon</a></li>
-              </ul><!-- /.box-menu -->
+              </ul>/.box-menu -->
             </li>
             <li class="navigation__item">
               <a href="about.html" class="navigation__link">About</a>
@@ -606,12 +624,15 @@
               </form><!-- /.header-search -->
             </div><!-- /.search-popup -->
           </div><!-- /.header-tools__item hover-container -->
-
-          <div class="header-tools__item hover-container">
-            <a class="header-tools__item js-open-aside" href="#" data-aside="customerForms">
+            <?php if (!isset($_SESSION['user'])) :?>
+            <a class="header-tools__item " href="?act=register" >
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_user" /></svg>
             </a>
-          </div>
+            <?php else: ?>
+               <a class="header-tools__item" href="?act=profile" >
+               <span>Hello, <?= $_SESSION['user']['name'] ?></span>
+               </a>
+               <?php endif; ?>
 
           <a class="header-tools__item" href="account_wishlist.html">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
