@@ -6,7 +6,7 @@
 <head>
      <!-- Title Meta -->
      <meta charset="utf-8" />
-     <title>Dashboard | Larkon - Responsive Admin Dashboard Template</title>
+     <title>Dashboard | PTD-Shop</title>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta name="description" content="A fully responsive premium admin dashboard template" />
      <meta name="author" content="Techzaa" />
@@ -23,6 +23,8 @@
 
      <!-- App css (Require in all Page) -->
      <link href="admin/assets_admin/css/app.min.css" rel="stylesheet" type="text/css" />
+
+     
 
      <!-- Theme Config js (Require in all Page) -->
      <script src="admin/assets_admin/js/config.js"></script>
@@ -602,6 +604,29 @@
                                    </ul>
                               </div>
                          </li>
+
+                         <li class="nav-item">
+                              <a class="nav-link menu-arrow" href="#sidebarCoupon" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCoupon">
+                                   <span class="nav-icon">
+                                        <iconify-icon icon="solar:bill-list-bold-duotone"></iconify-icon>
+                                   </span>
+                                   <span class="nav-text"> Coupons </span>
+                              </a>
+                              <div class="collapse" id="sidebarCoupon">
+                                   <ul class="nav sub-navbar-nav">
+                                        <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="">List</a>
+                                        </li>                         
+                                        <!-- <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="index.php?act=category-edit">Edit</a>
+                                        </li> -->
+                                        <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="">Add</a>
+                                        </li>
+                                   </ul>
+                              </div>
+                         </li>
+                         
 <!-- 
                          <li class="nav-item">
                               <a class="nav-link menu-arrow" href="#sidebarPurchases" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPurchases">
