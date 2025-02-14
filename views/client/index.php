@@ -151,11 +151,11 @@
     <div class="mb-4 pb-4 mb-xl-5 pb-xl-5"></div>
 
     <section class="products-grid container">
-      <h2 class="section-title text-uppercase text-center mb-1 mb-md-3 pb-xl-2 mb-xl-4">Our Trendy <strong>Products</strong></h2>
+      <h2 class="section-title text-uppercase text-center mb-1 mb-md-3 pb-xl-2 mb-xl-4">Sản Phẩm <strong>Nổi bật</strong></h2>
 
       <ul class="nav nav-tabs mb-3 text-uppercase justify-content-center" id="collections-tab" role="tablist">
         <li class="nav-item" role="presentation">
-          <a class="nav-link nav-link_underscore active" id="collections-tab-1-trigger" data-bs-toggle="tab" href="#collections-tab-1" role="tab" aria-controls="collections-tab-1" aria-selected="true">All</a>
+          <a class="nav-link nav-link_underscore active" id="collections-tab-1-trigger" data-bs-toggle="tab" href="#collections-tab-1" role="tab" aria-controls="collections-tab-1" aria-selected="true">Tất cả sản phẩm</a>
         </li>
         <li class="nav-item" role="presentation">
           <a class="nav-link nav-link_underscore" id="collections-tab-2-trigger" data-bs-toggle="tab" href="#collections-tab-2" role="tab" aria-controls="collections-tab-2" aria-selected="true">New Arrivals</a>
@@ -1019,7 +1019,7 @@
     <div class="mb-3 mb-xl-5 pb-1 pb-xl-5"></div>
 
 
-    <section class="deal-timer position-relative d-flex align-items-end overflow-hidden" style="background-color: #ebebeb;">
+    <!-- <section class="deal-timer position-relative d-flex align-items-end overflow-hidden" style="background-color: #ebebeb;">
       <div class="background-img" style="background-image: url('client/images/deal_timer_bg.jpg');"></div>
 
       <div class="deal-timer-wrapper container position-relative">
@@ -1050,14 +1050,15 @@
             <span class="countdown-word fw-bold text-uppercase text-secondary">Sec</span>
           </div>
         </div>
-      </div><!-- /.deal-timer-wrapper -->
-    </section><!-- /.deal-timer -->
+      </div>
+    </section> -->
+    <!-- /.deal-timer -->
 
 
-    <div class="mb-3 mb-xl-5 pb-1 pb-xl-5"></div>
+    <!-- <div class="mb-3 mb-xl-5 pb-1 pb-xl-5"></div> -->
 
 
-    <section class="grid-banner container mb-3">
+    <!-- <section class="grid-banner container mb-3">
       <div class="row">
         <div class="col-md-6">
           <div class="grid-banner__item grid-banner__item_rect position-relative mb-3">
@@ -1066,9 +1067,9 @@
               <h6 class="text-uppercase text-white fw-medium mb-3">Starting At $19</h6>
               <h3 class="text-white mb-3">Women's T-Shirts</h3>
               <a href="shop1.html" class="btn-link default-underline text-uppercase text-white fw-medium">Shop Now</a>
-            </div><!-- /.content_abs content_bottom content_left content_bottom-md content_left-md -->
+            </div>
           </div>
-        </div><!-- /.col-md-6 -->
+        </div>
 
         <div class="col-md-6">
           <div class="grid-banner__item grid-banner__item_rect position-relative mb-3">
@@ -1077,17 +1078,17 @@
               <h6 class="text-uppercase fw-medium mb-3">Starting At $39</h6>
               <h3 class="mb-3">Men's Sportswear</h3>
               <a href="shop1.html" class="btn-link default-underline text-uppercase fw-medium">Shop Now</a>
-            </div><!-- /.content_abs content_bottom content_left content_bottom-md content_left-md -->
+            </div>
           </div>
-        </div><!-- /.col-md-6 -->
-      </div><!-- /.row -->
-    </section><!-- /.grid-banner container -->
+        </div>
+      </div>
+    </section> -->
 
 
-    <div class="mb-5 pb-1 pb-xl-4"></div>
+    <!-- <div class="mb-5 pb-1 pb-xl-4"></div> -->
 
 
-    <section class="products-carousel container">
+    <!-- <section class="products-carousel container">
       <h2 class="section-title text-uppercase text-center mb-4 pb-xl-2 mb-xl-4">Limited <strong>Edition</strong></h2>
 
       <div id="product_carousel" class="position-relative">
@@ -1221,23 +1222,23 @@
                 </button>
               </div>
             </div>
-          </div><!-- /.swiper-wrapper -->
-        </div><!-- /.swiper-container js-swiper-slider -->
+          </div>
+        </div>
 
         <div class="products-carousel__prev position-absolute top-50 d-flex align-items-center justify-content-center">
           <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use href="#icon_prev_md" /></svg>
-        </div><!-- /.products-carousel__prev -->
+        </div>
         <div class="products-carousel__next position-absolute top-50 d-flex align-items-center justify-content-center">
           <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><use href="#icon_next_md" /></svg>
-        </div><!-- /.products-carousel__next -->
+        </div>
 
         <div class="products-pagination mt-4 mb-5 d-flex align-items-center justify-content-center"></div>
-        <!-- /.products-pagination -->
-      </div><!-- /.position-relative -->
+       
+      </div>
 
-    </section><!-- /.products-carousel container -->
+    </section> -->
 
-    <section class="instagram container">
+    <!-- <section class="instagram container">
       <h2 class="section-title text-uppercase text-center mb-4 pb-xl-2 mb-xl-4">@UOMO</h2>
 
       <div class="row row-cols-3 row-cols-md-4 row-cols-xl-6">
@@ -1302,7 +1303,7 @@
           </a>
         </div>
       </div>
-    </section><!-- /.instagram container -->
+    </section>/.instagram container -->
 
 
     <div class="mb-4 pb-4 pb-xl-5 mb-xl-5"></div>

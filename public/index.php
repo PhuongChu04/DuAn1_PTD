@@ -1,12 +1,18 @@
 <?php
 session_start();
 require_once '../controllers/admin/CategoryAdminController.php';
+require_once '../controllers/admin/CouponAdminController.php';
 require_once '../controllers/client/AuthController.php';
 require_once '../controllers/client/ProfileController.php';
 $action = isset($_GET['act']) ? $_GET['act'] : 'index';
 
 $categoryAdmin = new CategoryAdminController();
+$couponAdmin = new CouponAdminController();
 
+
+
+
+//Client
 $auth= new AuthController();
 $profile= new ProfileController();
 
@@ -35,6 +41,21 @@ switch ($action) {
         break;
     case 'category-delete':
         $categoryAdmin->deleteCategory();
+        break;
+    case 'coupon':
+        $couponAdmin->index();
+        break;
+    case 'coupon-create':
+        $couponAdmin->create();
+        break;
+    case 'coupon-edit':
+        $couponAdmin->edit();
+        break;
+    case 'coupon-update':
+        $couponAdmin->update();
+        break;
+    case 'coupon-delete':
+        $couponAdmin->delete();
         break;
 
 
