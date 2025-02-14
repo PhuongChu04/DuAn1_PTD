@@ -7,13 +7,13 @@
               <img src="client/images/logo.png" alt="Uomo" class="logo__image d-block">
             </a>
           </div><!-- /.logo -->
-          <p class="footer-address">1418 River Drive, Suite 35 Cottonhall, CA 9622 United States</p>
+          <p class="footer-address">20 Trịnh Văn Bô - Phương Canh - Nam Từ Niêm -Hà NộiNội </p>
 
           <p class="m-0">
-            <strong class="fw-medium">sale@uomo.com</strong>
+            <strong class="fw-medium">ptd@gmail.com</strong>
           </p>
           <p>
-            <strong class="fw-medium">+1 246-345-0695</strong>
+            <strong class="fw-medium">098666999</strong>
           </p>
 
           <ul class="social-links list-unstyled d-flex flex-wrap mb-0">

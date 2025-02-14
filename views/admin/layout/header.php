@@ -615,13 +615,13 @@
                               <div class="collapse" id="sidebarCoupon">
                                    <ul class="nav sub-navbar-nav">
                                         <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="">List</a>
+                                             <a class="sub-nav-link" href="index.php?act=coupon">Coupon List</a>
                                         </li>                         
                                         <!-- <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="index.php?act=category-edit">Edit</a>
                                         </li> -->
                                         <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="">Add</a>
+                                             <a class="sub-nav-link" href="index.php?act=coupon-create">Coupon Add</a>
                                         </li>
                                    </ul>
                               </div>
