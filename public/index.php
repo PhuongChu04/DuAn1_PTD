@@ -1,18 +1,23 @@
 <?php
 session_start();
 require_once '../controllers/admin/CategoryAdminController.php';
+require_once '../controllers/admin/ProductAdminController.php';
 require_once '../controllers/admin/CouponAdminController.php';
 require_once '../controllers/client/AuthController.php';
 require_once '../controllers/client/ProfileController.php';
+require_once '../controllers/client/HomeController.php';
 $action = isset($_GET['act']) ? $_GET['act'] : 'index';
 
 $categoryAdmin = new CategoryAdminController();
 $couponAdmin = new CouponAdminController();
+$productAdmin = new ProductAdminController();
 
 //Client
 $auth= new AuthController();
 $profile= new ProfileController();
-$productAdmin = new ProductAdminController();
+$home = new HomeController();
+
+
 
 
 
@@ -75,7 +80,7 @@ switch ($action) {
 
         // Client
     case 'index':
-        include '../views/client/index.php';
+        $home->index();
         break;
     case 'login_register':
         include '../views/client/auth/login_register.php';
