@@ -42,10 +42,22 @@ class User extends connect{
 
     }
 
-    public function getPassword(){
+    public function getPassword(){ //Lấy mk cũ
         $sql= 'SELECT password FROM users WHERE user_id=?';
         $stmt= $this->connect()->prepare($sql);
         $stmt->execute([$_SESSION['user']['user_id']]);
         return $stmt->fetchColumn();
+    }
+
+    public function auth($email, $password){
+        $sql= 'SELECT * FROM users WHERE email=?';
+        $stmt= $this->connect()->prepare($sql);
+        $stmt->execute([$email]);
+        $user = $stmt->fetch();
+
+        if ($user && $user['role_id'] == 2 && password_verify($password, $user['password'])) {
+            return $user;
+        }
+        return false;
     }
 }
