@@ -23,8 +23,11 @@ switch ($action) {
     case 'auth':
         $authAdmin->singin();
         break;
+    case 'logout-admin':
+        $authAdmin->logout();
+        break;
     case 'admin':
-        $authAdmin->middLeware();
+        // $authAdmin->middLeware();
         include '../views/admin/index.php';
         break;
     case 'product':

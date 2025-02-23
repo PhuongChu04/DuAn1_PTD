@@ -4,7 +4,7 @@ class AuthAdminController extends User
 {
     public function isAdmin()
     {
-        return isset($_SESSION['user']) && $_SESSION['user']['role_is'] == 2;
+        return isset($_SESSION['user_admin']) && $_SESSION['user_admin']['role_is'] == 2;
     }
 
     public function middLeware()
@@ -14,7 +14,7 @@ class AuthAdminController extends User
             header('location: ?act=auth');
             exit();
         } else {
-            header('location: ?act=admin');
+            return true;
         }
     }
 
@@ -37,7 +37,7 @@ class AuthAdminController extends User
 
             $auth = $this->auth($_POST['email'], $_POST['password']);
             if ($auth) {
-                $_SESSION['user'] = $auth;
+                $_SESSION['user_admin'] = $auth;
                 $_SESSION['success'] = "Đăng nhập thành công";
                 header('location: ?act=admin');
                 exit();
@@ -48,5 +48,11 @@ class AuthAdminController extends User
             }
         }
         include '../views/admin/auth/login.php';
+    }
+
+    public function logout(){
+        unset($_SESSION['user_admin']);
+        header('location: ?act=auth');
+        exit();
     }
 }
