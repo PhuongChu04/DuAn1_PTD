@@ -1,5 +1,6 @@
 <?php
 require_once '../models/Category.php';
+
 class CategoryAdminController extends Category
 {
     public function index()
@@ -110,4 +111,14 @@ class CategoryAdminController extends Category
             exit();
         }
     }
+    public function getCategoryImages() {
+        $category1 = $this->getCategoryById(10);
+        $category2 = $this->getCategoryById(12);
+        $category3 = $this->getCategoryById(11);
+        return compact('category1', 'category2', 'category3'); // Trả về mảng chứa 3 danh mục
+    }
+    
+
+
+
 }

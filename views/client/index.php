@@ -1,5 +1,9 @@
 <?php include '../views/client/layout/header.php' ?>
-
+<?php
+require_once '../controllers/admin/CategoryAdminController.php';
+$categoryController = new CategoryAdminController();
+$categories = $categoryController->getCategoryImages();
+?>
 
 <div class="page-content">
 
@@ -100,21 +104,23 @@
         <div class="row h-md-100">
           <div class="col-lg-6 h-md-100">
             <div class="collection-grid__item position-relative h-md-100">
-              <div class="background-img" style="background-image: url('client/images/collection_grid_1.jpg');"></div>
+            <div class="background-img "  style="background-image: url('./images/category/<?php echo $categories['category1']['image']; ?>' );"></div>
+              
               <div class="content_abs content_bottom content_left content_bottom-md content_left-md">
                 <p class="text-uppercase mb-1">Hot List</p>
-                <h3 class="text-uppercase"><strong>Women</strong> Collection</h3>
-                <a href="shop1.html" class="btn-link default-underline text-uppercase fw-medium">Shop Now</a>
+                <h3 class="text-uppercase"><strong>Dress pants</strong> Collection</h3>
+                <a href="shop1.html" class="btn-link default-underline text-uppercase fw-medium">Khám phá</a>
               </div><!-- /.content_abs content_bottom content_left content_bottom-md content_left-md -->
             </div>
           </div><!-- /.col-md-6 -->
 
           <div class="col-lg-6 d-flex flex-column">
             <div class="collection-grid__item position-relative flex-grow-1 mb-lg-4">
-              <div class="background-img" style="background-image: url('client/images/collection_grid_2.jpg');"></div>
+            <div class="background-img"  style="background-image: url('./images/category/<?php echo $categories['category2']['image']; ?>' );"></div>
+
               <div class="content_abs content_bottom content_left content_bottom-md content_left-md">
                 <p class="text-uppercase mb-1">Hot List</p>
-                <h3 class="text-uppercase"><strong>Men</strong> Collection</h3>
+                <h3 class="text-uppercase"><strong>Kaki</strong> Collection</h3>
                 <a href="shop1.html" class="btn-link default-underline text-uppercase fw-medium">Shop Now</a>
               </div><!-- /.content_abs content_bottom content_left content_bottom-md content_left-md -->
             </div>
@@ -122,11 +128,12 @@
               <div class="row h-md-100">
                 <div class="col-md-6 h-md-100">
                   <div class="collection-grid__item h-md-100 position-relative">
-                    <div class="background-img" style="background-image: url('client/images/collection_grid_3.jpg');"></div>
+                  <div class="background-img "  style="background-image: url('./images/category/<?php echo $categories['category3']['image']; ?>' );"></div>
+
                     <div class="content_abs content_bottom content_left content_bottom-md content_left-md">
                       <p class="text-uppercase mb-1">Hot List</p>
-                      <h3 class="text-uppercase"><strong>Kids</strong> Collection</h3>
-                      <a href="shop1.html" class="btn-link default-underline text-uppercase fw-medium">Shop Now</a>
+                      <h3 class="text-uppercase"><strong>Short</strong> Collection</h3>
+                      <a href="shop1.html" class="btn-link default-underline text-uppercase fw-medium">Khám Phá</a>
                     </div><!-- /.content_abs content_bottom content_left content_bottom-md content_left-md -->
                   </div><!-- /.collection-grid__item -->
                 </div>
@@ -171,21 +178,23 @@
       <div class="tab-content pt-2" id="collections-tab-content">
         <div class="tab-pane fade show active" id="collections-tab-1" role="tabpanel" aria-labelledby="collections-tab-1-trigger">
           <div class="row">
+            <?php foreach ($product as $pro) :?>
             <div class="col-6 col-md-4 col-lg-3">
               <div class="product-card mb-3 mb-md-4 mb-xxl-5">
                 <div class="pc__img-wrapper">
-                  <a href="product1_simple.html">
-                    <img loading="lazy" src="client/images/products/product_1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
-                    <img loading="lazy" src="client/images/products/product_1-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
+                  <a href="?act=product_detail&slug=<?=$pro['product_slug']?>">
+                    <img loading="lazy" src="../public/images/product/<?= $pro['product_image'] ?>"  width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
+                    <!-- <img loading="lazy" src="client/images/products/product_1-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second"> -->
                   </a>
                   <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
                 </div>
 
                 <div class="pc__info position-relative">
-                  <p class="pc__category">Dresses</p>
-                  <h6 class="pc__title"><a href="product1_simple.html">Cropped Faux Leather Jacket</a></h6>
-                  <div class="product-card__price d-flex">
-                    <span class="money price">$29</span>
+                  <p class="pc__category"><?=$pro['category_name'] ?></p>
+                  <h6 class="pc__title"><a href="?act=product_detail"><?=$pro['product_name']?></a></h6>
+                  <div class="tp-product-price-wrapper">
+                    <span class="tp-product-price text-decoration-line-through text-muted fs-9"><?=number_format($pro['product_price']*1000,0,',','.')?>đ</span>
+                    <span class="tp-product-price new-price text-red fs-4"><?=number_format($pro['product_sale_price']*1000,0,',','.')?>đ</span>
                   </div>
                   <div class="product-card__review d-flex align-items-center">
                     <div class="reviews-group d-flex">
@@ -195,7 +204,7 @@
                       <svg class="review-star" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg"><use href="#icon_star" /></svg>
                       <svg class="review-star" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg"><use href="#icon_star" /></svg>
                     </div>
-                    <span class="reviews-note text-lowercase text-secondary ms-1">8k+ reviews</span>
+                    <span class="reviews-note text-lowercase text-secondary ms-1">0 reviews</span>
                   </div>
 
                   <button class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
@@ -204,176 +213,8 @@
                 </div>
               </div>
             </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-              <div class="product-card mb-3 mb-md-4 mb-xxl-5">
-                <div class="pc__img-wrapper">
-                  <a href="product1_simple.html">
-                    <img loading="lazy" src="client/images/products/product_2.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
-                    <img loading="lazy" src="client/images/products/product_2-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
-                  </a>
-                  <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                </div>
-
-                <div class="pc__info position-relative">
-                  <p class="pc__category">Dresses</p>
-                  <h6 class="pc__title"><a href="product1_simple.html">Calvin Shorts</a></h6>
-                  <div class="product-card__price d-flex">
-                    <span class="money price">$62</span>
-                  </div>
-
-                  <button class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-              <div class="product-card mb-3 mb-md-4 mb-xxl-5">
-                <div class="pc__img-wrapper">
-                  <a href="product1_simple.html">
-                    <img loading="lazy" src="client/images/products/product_3.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
-                    <img loading="lazy" src="client/images/products/product_3-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
-                  </a>
-                  <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                </div>
-
-                <div class="pc__info position-relative">
-                  <p class="pc__category">Dresses</p>
-                  <h6 class="pc__title"><a href="product1_simple.html">Kirby T-Shirt</a></h6>
-                  <div class="product-card__price d-flex">
-                    <span class="money price">$17</span>
-                  </div>
-
-                  <button class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-              <div class="product-card mb-3 mb-md-4 mb-xxl-5">
-                <div class="pc__img-wrapper">
-                  <a href="product1_simple.html">
-                    <img loading="lazy" src="client/images/products/product_4.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
-                    <img loading="lazy" src="client/images/products/product_4-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
-                  </a>
-                  <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                </div>
-
-                <div class="pc__info position-relative">
-                  <p class="pc__category">Dresses</p>
-                  <h6 class="pc__title"><a href="product1_simple.html">Cableknit Shawl</a></h6>
-                  <div class="product-card__price d-flex">
-                    <span class="money price price-old">$129</span>
-                    <span class="money price price-sale">$99</span>
-                  </div>
-
-                  <button class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-              <div class="product-card mb-3 mb-md-4 mb-xxl-5">
-                <div class="pc__img-wrapper">
-                  <a href="product1_simple.html">
-                    <img loading="lazy" src="client/images/products/product_5.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
-                    <img loading="lazy" src="client/images/products/product_5-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
-                  </a>
-                  <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                </div>
-
-                <div class="pc__info position-relative">
-                  <p class="pc__category">Dresses</p>
-                  <h6 class="pc__title"><a href="product1_simple.html">Colorful Jacket</a></h6>
-                  <div class="product-card__price d-flex">
-                    <span class="money price">$29</span>
-                  </div>
-
-                  <button class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-              <div class="product-card mb-3 mb-md-4 mb-xxl-5">
-                <div class="pc__img-wrapper">
-                  <a href="product1_simple.html">
-                    <img loading="lazy" src="client/images/products/product_6.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
-                    <img loading="lazy" src="client/images/products/product_6-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
-                  </a>
-                  <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                </div>
-
-                <div class="pc__info position-relative">
-                  <p class="pc__category">Dresses</p>
-                  <h6 class="pc__title"><a href="product1_simple.html">Shirt In Botanical Cheetah Print</a></h6>
-                  <div class="product-card__price d-flex">
-                    <span class="money price">$62</span>
-                  </div>
-
-                  <button class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-              <div class="product-card mb-3 mb-md-4 mb-xxl-5">
-                <div class="pc__img-wrapper">
-                  <a href="product1_simple.html">
-                    <img loading="lazy" src="client/images/products/product_7.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
-                    <img loading="lazy" src="client/images/products/product_7-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
-                  </a>
-                  <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                </div>
-
-                <div class="pc__info position-relative">
-                  <p class="pc__category">Dresses</p>
-                  <h6 class="pc__title"><a href="product1_simple.html">Cotton Jersey T-Shirt</a></h6>
-                  <div class="product-card__price d-flex">
-                    <span class="money price">$17</span>
-                  </div>
-
-                  <button class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-              <div class="product-card mb-3 mb-md-4 mb-xxl-5">
-                <div class="pc__img-wrapper">
-                  <a href="product1_simple.html">
-                    <img loading="lazy" src="client/images/products/product_8.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
-                    <img loading="lazy" src="client/images/products/product_8-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second">
-                  </a>
-                  <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
-                </div>
-
-                <div class="pc__info position-relative">
-                  <p class="pc__category">Dresses</p>
-                  <h6 class="pc__title"><a href="product1_simple.html">Zessi Dresses</a></h6>
-                  <div class="product-card__price d-flex">
-                    <span class="money price price-old">$129</span>
-                    <span class="money price price-sale">$99</span>
-                  </div>
-
-                  <button class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
-                  </button>
-                </div>
-              </div>
-            </div>
+            <?php endforeach; ?>
+           
           </div><!-- /.row -->
           <div class="text-center mt-2">
             <a class="btn-link btn-link_lg default-underline text-uppercase fw-medium" href="shop1.html">Discover More</a>

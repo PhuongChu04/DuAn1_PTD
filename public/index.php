@@ -1,22 +1,29 @@
 <?php
 session_start();
 require_once '../controllers/admin/CategoryAdminController.php';
+require_once '../controllers/admin/ProductAdminController.php';
 require_once '../controllers/admin/CouponAdminController.php';
 require_once '../controllers/admin/AuthAdminController.php';
 require_once '../controllers/client/AuthController.php';
 require_once '../controllers/client/ProfileController.php';
+require_once '../controllers/client/HomeController.php';
+require_once('../controllers/client/CartController.php');
 $action = isset($_GET['act']) ? $_GET['act'] : 'index';
 
 $categoryAdmin = new CategoryAdminController();
 $couponAdmin = new CouponAdminController();
 $authAdmin = new AuthAdminController();
 
-
-
+$productAdmin = new ProductAdminController();
 
 //Client
-$auth= new AuthController();
-$profile= new ProfileController();
+$auth = new AuthController();
+$profile = new ProfileController();
+$home = new HomeController();
+$cart = new CartController();
+
+
+
 
 
 switch ($action) {
@@ -31,13 +38,28 @@ switch ($action) {
         include '../views/admin/index.php';
         break;
     case 'product':
-        include '../views/admin/product/list.php';
+        $productAdmin->index();
         break;
     case 'product-create':
-        include '../views/admin/product/create.php';
+        $productAdmin->create();
+        break;
+    case 'product-store':
+        $productAdmin->store();
         break;
     case 'product-edit':
-        include '../views/admin/product/edit.php';
+        $productAdmin->edit();
+        break;
+    case 'product-update':
+        $productAdmin->update();
+        break;
+    case 'gallery-delete':
+        $productAdmin->deleteGallery();
+        break;
+    case 'product-variant-delete':
+        $productAdmin->deleteProductVariant();
+        break;
+    case 'product-delete':
+        $productAdmin->deleteProduct();
         break;
     case 'category':
         $categoryAdmin->index();
@@ -68,9 +90,9 @@ switch ($action) {
         break;
 
 
-    // Client
+        // Client
     case 'index':
-        include '../views/client/index.php';
+        $home->index();
         break;
     case 'login_register':
         include '../views/client/auth/login_register.php';
@@ -95,5 +117,21 @@ switch ($action) {
         break;
     case 'logout':
         $auth->logout();
+        break;
+    case 'product_detail';
+        $home->getProductDetail();
+        break;
+
+    case 'cart':
+        $cart->index();
+        break;
+    case 'addToCart-buyNow':
+        $cart->addToCartOrBuyNow();
+        break;
+    case 'update-cart':
+        $cart->update();
+        break;
+    case 'delete-cart':
+        $cart->delete();
         break;
 }

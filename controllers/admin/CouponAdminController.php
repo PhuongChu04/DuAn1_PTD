@@ -10,7 +10,8 @@ class CouponAdminController extends Coupon
 
     public function create()
     {
-        if (isset($_SERVER['REQUEST_METHOD']) == 'POST' && isset($_POST['coupon-update'])) {
+        
+        if (isset($_SERVER['REQUEST_METHOD']) == 'POST' && isset($_POST['coupon-create'])) {
             $errors = [];
             if (empty($_POST['name'])) {
                 $errors['name'] = 'Vui lòng nhập tên';
