@@ -231,98 +231,8 @@
   </div><!-- /.aside aside_right -->
 
   <!-- Cart Drawer -->
-  <div class="aside aside_right overflow-hidden cart-drawer" id="cartDrawer">
-    <div class="aside-header d-flex align-items-center">
-      <h3 class="text-uppercase fs-6 mb-0">SHOPPING BAG ( <span class="cart-amount js-cart-items-count">1</span> ) </h3>
-      <button class="btn-close-lg js-close-aside btn-close-aside ms-auto"></button>
-    </div><!-- /.aside-header -->
 
-    <div class="aside-content cart-drawer-items-list">
-      <div class="cart-drawer-item d-flex position-relative">
-        <div class="position-relative">
-          <a href="product1_simple.html">
-            <img loading="lazy" class="cart-drawer-item__img" src="client/images/cart-item-1.jpg" alt="">
-          </a>
-        </div>
-        <div class="cart-drawer-item__info flex-grow-1">
-          <h6 class="cart-drawer-item__title fw-normal"><a href="product1_simple.html">Zessi Dresses</a></h6>
-          <p class="cart-drawer-item__option text-secondary">Color: Yellow</p>
-          <p class="cart-drawer-item__option text-secondary">Size: L</p>
-          <div class="d-flex align-items-center justify-content-between mt-1">
-            <div class="qty-control position-relative">
-              <input type="number" name="quantity" value="1" min="1" class="qty-control__number border-0 text-center">
-              <div class="qty-control__reduce text-start">-</div>
-              <div class="qty-control__increase text-end">+</div>
-            </div><!-- .qty-control -->
-            <span class="cart-drawer-item__price money price">$99</span>
-          </div>
-        </div>
-
-        <button class="btn-close-xs position-absolute top-0 end-0 js-cart-item-remove"></button>
-      </div><!-- /.cart-drawer-item d-flex -->
-
-      <hr class="cart-drawer-divider">
-
-      <div class="cart-drawer-item d-flex position-relative">
-        <div class="position-relative">
-          <a href="product1_simple.html">
-            <img loading="lazy" class="cart-drawer-item__img" src="client/images/cart-item-2.jpg" alt="">
-          </a>
-        </div>
-        <div class="cart-drawer-item__info flex-grow-1">
-          <h6 class="cart-drawer-item__title fw-normal"><a href="product1_simple.html">Kirby T-Shirt</a></h6>
-          <p class="cart-drawer-item__option text-secondary">Color: Black</p>
-          <p class="cart-drawer-item__option text-secondary">Size: XS</p>
-          <div class="d-flex align-items-center justify-content-between mt-1">
-            <div class="qty-control position-relative">
-              <input type="number" name="quantity" value="4" min="1" class="qty-control__number border-0 text-center">
-              <div class="qty-control__reduce text-start">-</div>
-              <div class="qty-control__increase text-end">+</div>
-            </div><!-- .qty-control -->
-            <span class="cart-drawer-item__price money price">$89</span>
-          </div>
-        </div>
-
-        <button class="btn-close-xs position-absolute top-0 end-0 js-cart-item-remove"></button>
-      </div><!-- /.cart-drawer-item d-flex -->
-
-      <hr class="cart-drawer-divider">
-
-      <div class="cart-drawer-item d-flex position-relative">
-        <div class="position-relative">
-          <a href="product1_simple.html">
-            <img loading="lazy" class="cart-drawer-item__img" src="client/images/cart-item-3.jpg" alt="">
-          </a>
-        </div>
-        <div class="cart-drawer-item__info flex-grow-1">
-          <h6 class="cart-drawer-item__title fw-normal"><a href="product1_simple.html">Cableknit Shawl</a></h6>
-          <p class="cart-drawer-item__option text-secondary">Color: Green</p>
-          <p class="cart-drawer-item__option text-secondary">Size: L</p>
-          <div class="d-flex align-items-center justify-content-between mt-1">
-            <div class="qty-control position-relative">
-              <input type="number" name="quantity" value="3" min="1" class="qty-control__number border-0 text-center">
-              <div class="qty-control__reduce text-start">-</div>
-              <div class="qty-control__increase text-end">+</div>
-            </div><!-- .qty-control -->
-            <span class="cart-drawer-item__price money price">$129</span>
-          </div>
-        </div>
-
-        <button class="btn-close-xs position-absolute top-0 end-0 js-cart-item-remove"></button>
-      </div><!-- /.cart-drawer-item d-flex -->
-
-    </div><!-- /.aside-content -->
-
-    <div class="cart-drawer-actions position-absolute start-0 bottom-0 w-100">
-      <hr class="cart-drawer-divider">
-      <div class="d-flex justify-content-between">
-        <h6 class="fs-base fw-medium">SUBTOTAL:</h6>
-        <span class="cart-subtotal fw-medium">$176.00</span>
-      </div><!-- /.d-flex justify-content-between -->
-      <a href="shop_cart.html" class="btn btn-light mt-3 d-block">View Cart</a>
-      <a href="shop_checkout.html" class="btn btn-primary mt-3 d-block">Checkout</a>
-    </div><!-- /.aside-content -->
-  </div><!-- /.aside -->
+  <!-- /.aside -->
 
   <!-- Sitemap -->
   <div class="modal fade" id="siteMap" tabindex="-1">
@@ -746,8 +656,45 @@
 
   <!-- Footer Sclient/cripts -->
   <script src="client/js/theme.js"></script>
+  <script>
+    function ChangeToSlug() {
+        var title, slug;
+
+        //Lấy text từ thẻ input title 
+        title = document.getElementById("product-name").value;
+
+        //Đổi chữ hoa thành chữ thường
+        slug = title.toLowerCase();
+
+        //Đổi ký tự có dấu thành không dấu
+        slug = slug.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
+        slug = slug.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
+        slug = slug.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
+        slug = slug.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o');
+        slug = slug.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u');
+        slug = slug.replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y');
+        slug = slug.replace(/đ/gi, 'd');
+        //Xóa các ký tự đặt biệt
+        slug = slug.replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi, '-');
+        //Đổi khoảng trắng thành ký tự gạch ngang
+        slug = slug.replace(/ /gi,"-");
+        //Đổi nhiều ký tự gạch ngang liên tiếp thành 1 ký tự gạch ngang
+        //Phòng trường hợp người nhập vào quá nhiều ký tự trắng
+        slug = slug.replace(/\-\-\-\-\-/gi, '-');
+        slug = slug.replace(/\-\-\-\-/gi, '-');
+        slug = slug.replace(/\-\-\-/gi, '-');
+        slug = slug.replace(/\-\-/gi, '-');
+        //Xóa các ký tự gạch ngang ở đầu và cuối
+        slug = '@' + slug + '@';
+        slug = slug.replace(/\@\-|\-\@|\@/gi, '');
+        //In slug ra textbox có id “slug”
+        document.getElementById('slug').value = slug;
+    }
+</script>
+
 
 </body>
+
 
 <!-- Mirrored from uomo-html.flexkitux.com/Demo1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Jan 2025 14:45:23 GMT -->
 </html>

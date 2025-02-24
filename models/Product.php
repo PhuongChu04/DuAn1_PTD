@@ -86,7 +86,7 @@ class Product extends connect
                 'product_variant_quantity' => $product['product_variant_quantity']
 
             ];
-        }
+        }//
         return $groupedProducts;
     }
     public function getProductById($product_id)
@@ -148,6 +148,9 @@ class Product extends connect
         $stmt = $this->connect()->prepare($sql);
         return $stmt->execute([$price, $sale_price, $quantity, $product_id, $color_id, $size_id, $product_variant_id]);
     }
+    
+
+
     public function getProductBySlug($slug)
     {
         $sql = "SELECT
@@ -267,5 +270,5 @@ class Product extends connect
         $stmt->execute(['%' . $keyword . '%']);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
+  
 }

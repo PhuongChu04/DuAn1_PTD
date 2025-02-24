@@ -6,6 +6,7 @@ require_once '../controllers/admin/CouponAdminController.php';
 require_once '../controllers/client/AuthController.php';
 require_once '../controllers/client/ProfileController.php';
 require_once '../controllers/client/HomeController.php';
+require_once('../controllers/client/CartController.php');
 $action = isset($_GET['act']) ? $_GET['act'] : 'index';
 
 $categoryAdmin = new CategoryAdminController();
@@ -13,9 +14,10 @@ $couponAdmin = new CouponAdminController();
 $productAdmin = new ProductAdminController();
 
 //Client
-$auth= new AuthController();
-$profile= new ProfileController();
+$auth = new AuthController();
+$profile = new ProfileController();
 $home = new HomeController();
+$cart = new CartController();
 
 
 
@@ -105,5 +107,21 @@ switch ($action) {
         break;
     case 'logout':
         $auth->logout();
+        break;
+    case 'product_detail';
+        $home->getProductDetail();
+        break;
+
+    case 'cart':
+        $cart->index();
+        break;
+    case 'addToCart-buyNow':
+        $cart->addToCartOrBuyNow();
+        break;
+    case 'update-cart':
+        $cart->update();
+        break;
+    case 'delete-cart':
+        $cart->delete();
         break;
 }
