@@ -111,7 +111,7 @@
                 </tr>
                 <tr>
                   <th>Tiền giảm giá:</th>
-                  <td>-<?= number_format($_SESSION['totalCoupon'] * 1000, 0, ',', '.') ?>đ</td>
+                  <td>-<?= number_format(($_SESSION['totalCoupon'])* 1000, 0, ',', '.') ?>đ</td>
                 </tr>
 
                 <tr>

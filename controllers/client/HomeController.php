@@ -1,8 +1,7 @@
 <?php
 require_once '../models/Category.php';
 require_once '../models/Product.php';
-// require_once '../models/Wishlist.php';
-// require_once '../models/Review.php';
+require_once '../models/Wishlist.php';
 
 class HomeController {
 
@@ -24,7 +23,6 @@ class HomeController {
     public function getProductDetail(){
         $productDetail = $this->product->getProductBySlug($_GET['slug']);
         $productDetail = reset($productDetail);
-        // $reviews = $this->review->getReviewByID($productDetail['product_id']);
         
 
         include '../views/client/product/productDetail.php';

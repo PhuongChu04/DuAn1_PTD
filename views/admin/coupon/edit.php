@@ -120,7 +120,7 @@
                                     </div> -->
                                     <div class="col-lg-4">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="type" value="Percentage" <?= $coupon['type'] == 'Precentage' ? 'checked' : '' ?> id="flexRadioDefault13">
+                                            <input class="form-check-input" type="radio" name="type" value="Percentage" <?= $coupon['type'] == 'Percentage' ? 'checked' : '' ?> id="flexRadioDefault13">
                                             <label class="form-check-label" for="flexRadioDefault13">
                                                 Giảm phần trăm
                                             </label>
