@@ -21,7 +21,7 @@ class AuthController extends User{
                 header('Location: ?act=register');
                 exit();
             }
-            $resgister = $this->register($_POST['name'], $_POST['email'], $_POST['password']) ;
+            $resgister = $this->register($_POST['name'], $_POST['email'], $_POST['password']) ;            
             if ($resgister) {
                 $_SESSION['success'] = 'Tạo tài khoản thành công. Vui lòng đăng nhập';
                 header('Location: ?act=login');

@@ -67,7 +67,7 @@
                     <span class="shopping-cart__product-price"><?= number_format($cart['product_variant_price'] * 1000, 0, ',', '.') ?>đ</span>
                   </td>
                   <td>
-                    <span class="shopping-cart__product-price"><?= number_format($cart['product_variant_sale_price'] * 1000, 0, ',', '.') ?>đ</span>
+                    <span class="shopping-cart__product-p rice"><?= number_format($cart['product_variant_sale_price'] * 1000, 0, ',', '.') ?>đ</span>
                   </td>
                   <td>
                     <div class="qty-control position-relative">
@@ -108,6 +108,10 @@
                 <tr>
                   <th>Tổng cộng</th>
                   <td><?= number_format($sum * 1000, 0, ',', '.') ?>đ</td>
+                </tr>
+                <tr>
+                  <th>Tiền giảm giá:</th>
+                  <td>-<?= number_format($_SESSION['totalCoupon'] * 1000, 0, ',', '.') ?>đ</td>
                 </tr>
 
                 <tr>
