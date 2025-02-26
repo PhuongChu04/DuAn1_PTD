@@ -123,7 +123,7 @@
             </table>
           </div>
           <div class="cart-table__header">
-            <a href="?act=checkout" class=" btn btn-dark  "> Đặt hàng</a>
+            <a href="?act=checkout" class=" btn btn-dark  ">Đặt hàng</a>
           </div>
         </div>
       </div>
