@@ -31,4 +31,11 @@ class Category extends connect{
         $stmt->execute([$_GET['id']]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    public function getCategoryById($id) {
+        $sql = 'SELECT * FROM categorys WHERE category_id = ?';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC); // Trả về một danh mục
+    }
+    
 }

@@ -2,17 +2,27 @@
 session_start();
 require_once '../controllers/admin/CategoryAdminController.php';
 require_once '../controllers/admin/ProductAdminController.php';
+require_once '../controllers/admin/CouponAdminController.php';
 require_once '../controllers/client/AuthController.php';
 require_once '../controllers/client/ProfileController.php';
-// require_once '../controllers/client/HomeController.php';
+require_once '../controllers/client/HomeController.php';
+require_once('../controllers/client/CartController.php');
+require_once '../controllers/admin/OrderAdminController.php';
 $action = isset($_GET['act']) ? $_GET['act'] : 'index';
 
 $categoryAdmin = new CategoryAdminController();
-
+$couponAdmin = new CouponAdminController();
+$productAdmin = new ProductAdminController();
+$orderAdmin = new OrderAdminController();
+//Client
 $auth = new AuthController();
 $profile = new ProfileController();
-$productAdmin = new ProductAdminController();
-// $home= new HomeController();
+$home = new HomeController();
+$cart = new CartController();
+
+
+
+
 
 switch ($action) {
     case 'admin':
@@ -54,12 +64,38 @@ switch ($action) {
     case 'category-delete':
         $categoryAdmin->deleteCategory();
         break;
+    case 'coupon':
+        $couponAdmin->index();
+        break;
+    case 'coupon-create':
+        $couponAdmin->create();
+        break;
+    case 'coupon-edit':
+        $couponAdmin->edit();
+        break;
+    case 'coupon-update':
+        $couponAdmin->update();
+        break;
+    case 'coupon-delete':
+        $couponAdmin->delete();
+        break;
+    case 'order-list':
+        $orderAdmin->list();
+        break;
+    case 'order-edit':
+        $orderAdmin->edit();
+
+        break;
+        case 'order-update':
+            $orderAdmin->update();
+    
+            break;
 
 
-        // Client
+
+    // Client
     case 'index':
-        // $home->index();
-        include '../views/client/index.php';
+        $home->index();
         break;
     case 'login_register':
         include '../views/client/auth/login_register.php';
@@ -84,5 +120,21 @@ switch ($action) {
         break;
     case 'logout':
         $auth->logout();
+        break;
+    case 'product_detail';
+        $home->getProductDetail();
+        break;
+
+    case 'cart':
+        $cart->index();
+        break;
+    case 'addToCart-buyNow':
+        $cart->addToCartOrBuyNow();
+        break;
+    case 'update-cart':
+        $cart->update();
+        break;
+    case 'delete-cart':
+        $cart->delete();
         break;
 }
