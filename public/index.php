@@ -1,9 +1,16 @@
 <?php
 session_start();
+<<<<<<< HEAD
 require_once '../controllers/admin/CategoryAdminController.php';
 require_once '../controllers/admin/ProductAdminController.php';
 require_once '../controllers/admin/CouponAdminController.php';
 require_once '../controllers/admin/AuthAdminController.php';
+=======
+require_once '../controllers/admin/OrderAdminController.php';
+require_once '../controllers/admin/CategoryAdminController.php';
+require_once '../controllers/admin/ProductAdminController.php';
+require_once '../controllers/admin/CouponAdminController.php';
+>>>>>>> dungvtph48187
 require_once '../controllers/client/AuthController.php';
 require_once '../controllers/client/ProfileController.php';
 require_once '../controllers/client/HomeController.php';
@@ -13,21 +20,30 @@ $action = isset($_GET['act']) ? $_GET['act'] : 'index';
 
 $categoryAdmin = new CategoryAdminController();
 $couponAdmin = new CouponAdminController();
+<<<<<<< HEAD
 $authAdmin = new AuthAdminController();
 
 $productAdmin = new ProductAdminController();
 
+=======
+$productAdmin = new ProductAdminController();
+$orderAdmin = new OrderAdminController();
+>>>>>>> dungvtph48187
 //Client
 $auth = new AuthController();
 $profile = new ProfileController();
 $home = new HomeController();
 $cart = new CartController();
+<<<<<<< HEAD
 
+=======
+>>>>>>> dungvtph48187
 $order = new OrderController();
 
 
 
 
+<<<<<<< HEAD
 
 switch ($action) {
     case 'auth':
@@ -38,6 +54,10 @@ switch ($action) {
         break;
     case 'admin':
         // $authAdmin->middLeware();
+=======
+switch ($action) {
+    case 'admin':
+>>>>>>> dungvtph48187
         include '../views/admin/index.php';
         break;
     case 'product':
@@ -91,9 +111,27 @@ switch ($action) {
     case 'coupon-delete':
         $couponAdmin->delete();
         break;
+<<<<<<< HEAD
 
 
         // Client
+=======
+    case 'order-list':
+        $orderAdmin->list();
+        break;
+    case 'order-edit':
+        $orderAdmin->edit();
+
+        break;
+    case 'order-update':
+        $orderAdmin->update();
+
+        break;
+
+
+
+    // Client
+>>>>>>> dungvtph48187
     case 'index':
         $home->index();
         break;
@@ -137,14 +175,20 @@ switch ($action) {
     case 'delete-cart':
         $cart->delete();
         break;
+<<<<<<< HEAD
 
+=======
+>>>>>>> dungvtph48187
     case 'checkout':
         $order->index();
         break;
     case 'order':
         $order->checkout();
         break;
+<<<<<<< HEAD
     case 'checkout-complete':
         include '../views/client/checkout/checkoutComplete.php';
         break;
+=======
+>>>>>>> dungvtph48187
 }

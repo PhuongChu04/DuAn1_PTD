@@ -30,7 +30,11 @@ class User extends connect{
         $sql = 'SELECT * FROM users WHERE user_id=?';
         $stmt=$this->connect()->prepare($sql);
         $stmt->execute([$id]);
+<<<<<<< HEAD
         return $stmt->fetch(PDO::FETCH_ASSOC);
+=======
+        return $stmt->fetch();
+>>>>>>> dungvtph48187
 
     }
 
@@ -42,12 +46,17 @@ class User extends connect{
 
     }
 
+<<<<<<< HEAD
     public function getPassword(){ //Lấy mk cũ
+=======
+    public function getPassword(){
+>>>>>>> dungvtph48187
         $sql= 'SELECT password FROM users WHERE user_id=?';
         $stmt= $this->connect()->prepare($sql);
         $stmt->execute([$_SESSION['user']['user_id']]);
         return $stmt->fetchColumn();
     }
+<<<<<<< HEAD
 
     public function auth($email, $password){
         $sql= 'SELECT * FROM users WHERE email=?';
@@ -60,4 +69,6 @@ class User extends connect{
         }
         return false;
     }
+=======
+>>>>>>> dungvtph48187
 }

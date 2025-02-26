@@ -67,7 +67,11 @@
                     <span class="shopping-cart__product-price"><?= number_format($cart['product_variant_price'] * 1000, 0, ',', '.') ?>đ</span>
                   </td>
                   <td>
+<<<<<<< HEAD
                     <span class="shopping-cart__product-p rice"><?= number_format($cart['product_variant_sale_price'] * 1000, 0, ',', '.') ?>đ</span>
+=======
+                    <span class="shopping-cart__product-price"><?= number_format($cart['product_variant_sale_price'] * 1000, 0, ',', '.') ?>đ</span>
+>>>>>>> dungvtph48187
                   </td>
                   <td>
                     <div class="qty-control position-relative">
@@ -109,10 +113,13 @@
                   <th>Tổng cộng</th>
                   <td><?= number_format($sum * 1000, 0, ',', '.') ?>đ</td>
                 </tr>
+<<<<<<< HEAD
                 <tr>
                   <th>Tiền giảm giá:</th>
                   <td>-<?= number_format(($_SESSION['totalCoupon'] ?? 0) * 1000, 0, ',', '.') ?>đ</td>
                 </tr>
+=======
+>>>>>>> dungvtph48187
 
                 <tr>
                   <th>Tổng cộng</th>
@@ -123,7 +130,11 @@
             </table>
           </div>
           <div class="cart-table__header">
+<<<<<<< HEAD
             <a href="?act=checkout" class=" btn btn-dark  ">Đặt hàng</a>
+=======
+            <a href="?act=checkout" class=" btn btn-dark  "> Đặt hàng</a>
+>>>>>>> dungvtph48187
           </div>
         </div>
       </div>
