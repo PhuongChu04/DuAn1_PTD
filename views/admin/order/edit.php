@@ -19,7 +19,7 @@
                                                             Progress</span></h4>
                                                   <p class="mb-0">Order / Order Details /
                                                        <?= $getOrderDetail['order_detail_id'] ?> -
-                                                       <?= date('F d,Y \a\t  g:i:a', strtotime($getOrderDetail['created_id'])) ?>
+                                                       <?= date('F d,Y \a\t  g:i:a', strtotime($getOrderDetail['created_at'])) ?>
                                                   </p>
 
                                              </div>

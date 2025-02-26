@@ -191,7 +191,7 @@
                                              <td>
                                                #<?= $order['order_detail_id'] ?>
                                              </td>
-                                             <td><?=date('M d Y',strtotime($order['created_id']))?></td>
+                                             <td><?=date('M d Y',strtotime($order['created_at']))?></td>
                                              <td>
                                                   <a href="#!" class="link-primary fw-medium"><?=$order['name']?></a>
                                              </td>

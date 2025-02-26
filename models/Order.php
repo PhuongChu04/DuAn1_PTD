@@ -2,6 +2,28 @@
 require_once '../connect/connect.php';
 class Order extends connect
 {
+    public function addOrder(
+        $product_id,
+        $variant_id,
+        $order_detail_id,
+        $quantity
+    ) {
+        $sql = 'INSERT INTO orders(user_id, product_id, variant_id, order_detail_id, quantity, created_at, updated_at)
+                 VALUES (?,?,?,?,?,now(),now())';
+        $stmt = $this->connect()->prepare($sql);
+        return $stmt->execute([$_SESSION['user']['user_id'], $product_id, $variant_id, $order_detail_id, $quantity]);
+    }
+    public function addOrderDetail($name, $email, $phone, $address, $amount, $note, $shipping_id, $coupon_id, $payment_method)
+    {
+        $sql = 'INSERT INTO order_details(name,email,phone,address,amount,note,shipping_id,user_id,coupon_id,payment_method,created_at,updated_at)
+                 VALUES (?,?,?,?,?,?,?,?,?,?,now(),now())';
+        $stmt = $this->connect()->prepare($sql);
+        return $stmt->execute([$name, $email, $phone, $address, $amount, $note, $shipping_id, $_SESSION['user']['user_id'], $coupon_id, $payment_method]);
+    }
+    public function getLastInsertId()
+    {
+        return $this->connect()->lastInsertId();
+    }
     public function getAllOrderDetail()
     {
         $sql = 'select * from order_details';
@@ -41,63 +63,63 @@ class Order extends connect
 
     }
     public function getCouponByID()
-{
-    $sql = 'SELECT  
+    {
+        $sql = 'SELECT  
         coupons.*, 
         coupons.type AS type, 
         coupons.coupon_value AS coupon_value
     FROM order_details
     LEFT JOIN coupons ON coupons.coupon_id = order_details.coupon_id
     WHERE order_details.order_detail_id = ?';
-    $stmt = $this->connect()->prepare($sql);
-    $stmt->execute([$_GET['order_detail_id']]);
-    return $stmt->fetch(PDO::FETCH_ASSOC);
-}
-public function getShipByID()
-{
-    $sql = 'SELECT  
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$_GET['order_detail_id']]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    public function getShipByID()
+    {
+        $sql = 'SELECT  
         ships.*
     FROM order_details
     LEFT JOIN ships ON ships.shipping_id = order_details.shipping_id
     WHERE order_details.order_detail_id = ?';
-    $stmt = $this->connect()->prepare($sql);
-    $stmt->execute([$_GET['order_detail_id']]);
-    return $stmt->fetch(PDO::FETCH_ASSOC);
-}
-public function updateOrder($status)
-{
-    $sql = 'SELECT status FROM order_details WHERE order_detail_id= ? ';
-    $stmt = $this->connect()->prepare($sql);
-    $stmt->execute([$_GET['order_detail_id']]);
-    $currentStatus = $stmt->fetchColumn();
-
-    $allowedStatus = [
-        'Pending' => ['Confirmed'],
-        'Confirmed' => ['Shipped', 'Canceled'],
-        'Shipped' => ['Delivered'],
-        'Delivered' => []
-    ];
-    if (!isset($allowedStatus[$currentStatus]) || !in_array($status, $allowedStatus[$currentStatus])) {
-        return false;
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$_GET['order_detail_id']]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    public function updateOrder($status)
+    {
+        $sql = 'SELECT status FROM order_details WHERE order_detail_id= ? ';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$_GET['order_detail_id']]);
+        $currentStatus = $stmt->fetchColumn();
 
-    $sql = 'UPDATE order_details SET status=?, updated_at= now()  WHERE order_detail_id= ? ';
-    $stmt = $this->connect()->prepare($sql);
-    return $stmt->execute([$status, $_GET['order_detail_id']]);
-}
-public function getOrderDetailByUserId()
-{
-    $sql = 'SELECT * FROM order_details where user_id = ?';
-    $stmt = $this->connect()->prepare($sql);
-    $stmt->execute([$_SESSION['user']['user_id']]);
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-public function cancel()
-{
-    $sql = 'UPDATE order_details SET status="Canceled", updated_at= now()  WHERE order_detail_id= ? ';
-    $stmt = $this->connect()->prepare($sql);
-    return $stmt->execute([$_GET['order_detail_id']]);
-}
+        $allowedStatus = [
+            'Pending' => ['Confirmed'],
+            'Confirmed' => ['Shipped', 'Canceled'],
+            'Shipped' => ['Delivered'],
+            'Delivered' => []
+        ];
+        if (!isset($allowedStatus[$currentStatus]) || !in_array($status, $allowedStatus[$currentStatus])) {
+            return false;
+        }
+
+        $sql = 'UPDATE order_details SET status=?, updated_at= now()  WHERE order_detail_id= ? ';
+        $stmt = $this->connect()->prepare($sql);
+        return $stmt->execute([$status, $_GET['order_detail_id']]);
+    }
+    public function getOrderDetailByUserId()
+    {
+        $sql = 'SELECT * FROM order_details where user_id = ?';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$_SESSION['user']['user_id']]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function cancel()
+    {
+        $sql = 'UPDATE order_details SET status="Canceled", updated_at= now()  WHERE order_detail_id= ? ';
+        $stmt = $this->connect()->prepare($sql);
+        return $stmt->execute([$_GET['order_detail_id']]);
+    }
 
 
 

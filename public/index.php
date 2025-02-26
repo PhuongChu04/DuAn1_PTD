@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once '../controllers/admin/OrderAdminController.php';
 require_once '../controllers/admin/CategoryAdminController.php';
 require_once '../controllers/admin/ProductAdminController.php';
 require_once '../controllers/admin/CouponAdminController.php';
@@ -7,7 +8,7 @@ require_once '../controllers/client/AuthController.php';
 require_once '../controllers/client/ProfileController.php';
 require_once '../controllers/client/HomeController.php';
 require_once('../controllers/client/CartController.php');
-require_once '../controllers/admin/OrderAdminController.php';
+require_once '../controllers/client/OrderController.php';
 $action = isset($_GET['act']) ? $_GET['act'] : 'index';
 
 $categoryAdmin = new CategoryAdminController();
@@ -19,7 +20,7 @@ $auth = new AuthController();
 $profile = new ProfileController();
 $home = new HomeController();
 $cart = new CartController();
-
+$order = new OrderController();
 
 
 
@@ -86,10 +87,10 @@ switch ($action) {
         $orderAdmin->edit();
 
         break;
-        case 'order-update':
-            $orderAdmin->update();
-    
-            break;
+    case 'order-update':
+        $orderAdmin->update();
+
+        break;
 
 
 
@@ -136,5 +137,11 @@ switch ($action) {
         break;
     case 'delete-cart':
         $cart->delete();
+        break;
+    case 'checkout':
+        $order->index();
+        break;
+    case 'order':
+        $order->checkout();
         break;
 }
