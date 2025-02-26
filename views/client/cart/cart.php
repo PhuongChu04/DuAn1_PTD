@@ -6,7 +6,7 @@
   <div class="mb-md-1 pb-md-3"></div>
   <div class="mb-4 pb-4"></div>
   <section class="shop-checkout container">
-    <h2 class="page-title">Cart</h2>
+    <h2 class="page-title">Giỏ hàng</h2>
     <div class="checkout-steps">
       <a href="shop_cart.html" class="checkout-steps__item active">
         <span class="checkout-steps__item-number">01</span>

@@ -442,11 +442,11 @@
         <nav class="navigation">
           <ul class="navigation__list list-unstyled d-flex">
             <li class="navigation__item">
-              <a href="#" class="navigation__link">Home</a>
+              <a href="?act=index" class="navigation__link">Trang chủ</a>
               
             </li>
             <li class="navigation__item">
-              <a href="#" class="navigation__link">Shop</a>
+              <a href="#" class="navigation__link">Sản phẩm</a>
               <div class="mega-menu">
                 <div class="container d-flex">
                   
@@ -454,35 +454,35 @@
 
                   <div class="mega-menu__media col">
                     <div class="position-relative">
-                      <img loading="lazy" class="mega-menu__img" src="client/images/mega-menu-item.jpg" alt="New Horizons">
-                      <div class="mega-menu__media-content content_abs content_left content_bottom">
+                      <!-- <img loading="lazy" class="mega-menu__img" src="client/images/mega-menu-item.jpg" alt="New Horizons"> -->
+                      <!-- <div class="mega-menu__media-content content_abs content_left content_bottom">
                         <h3>NEW</h3>
                         <h3 class="mb-0">HORIZONS</h3>
                         <a href="shop1.html" class="btn-link default-underline fw-medium">SHOP NOW</a>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div><!-- /.container d-flex -->
               </div>
             </li>
-            <li class="navigation__item">
+            <!-- <li class="navigation__item">
               <a href="#" class="navigation__link">Blog</a>
               <ul class="default-menu list-unstyled">
                 <li class="sub-menu__item"><a href="blog_list1.html" class="menu-link menu-link_us-s">Blog V1</a></li>
                 <li class="sub-menu__item"><a href="blog_list2.html" class="menu-link menu-link_us-s">Blog V2</a></li>
                 <li class="sub-menu__item"><a href="blog_list3.html" class="menu-link menu-link_us-s">Blog V3</a></li>
                 <li class="sub-menu__item"><a href="blog_single.html" class="menu-link menu-link_us-s">Blog Detail</a></li>
-              </ul><!-- /.box-menu -->
-            </li>
-            <li class="navigation__item">
+              </ul>
+            </li> -->
+            <!-- <li class="navigation__item">
               <a href="#" class="navigation__link">Pages</a>
              
             </li>
             <li class="navigation__item">
               <a href="about.html" class="navigation__link">About</a>
-            </li>
+            </li> -->
             <li class="navigation__item">
-              <a href="contact.html" class="navigation__link">Contact</a>
+              <a href="contact.html" class="navigation__link">Liên hệ</a>
             </li>
           </ul><!-- /.navigation__list -->
         </nav><!-- /.navigation -->

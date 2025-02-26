@@ -102,11 +102,11 @@ class CategoryAdminController extends Category
     {
         try {
             $this->delete($_GET['id']);
-            $_SESSION['succes'] = 'Cập nhật danh mục thành công';
+            $_SESSION['success'] = 'Xóa danh mục thành công';
             header('Location: index.php?act=category');
             exit();
         } catch (\Throwable $th) {
-            $_SESSION['error'] = 'Cập nhật danh mục thất bại, Vui lòng thử lại';
+            $_SESSION['error'] = 'Xóa danh mục thất bại, Vui lòng thử lại';
             header('Location:' . $_SERVER['HTTP_REFERER']);
             exit();
         }

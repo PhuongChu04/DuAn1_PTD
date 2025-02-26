@@ -8,7 +8,7 @@
             $serverName = 'localhost';
             $userName = 'root';
             $password = '';
-            $myDB = 'duan1_dotstep';
+            $myDB = 'duan1_ptd';
             try {
                 $this->conn = new PDO("mysql:host=$serverName;dbname=$myDB", $userName, $password);
                 $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
