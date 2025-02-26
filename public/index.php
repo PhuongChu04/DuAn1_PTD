@@ -144,4 +144,7 @@ switch ($action) {
     case 'order':
         $order->checkout();
         break;
+    case 'checkout-complete':
+        include '../views/client/checkout/checkoutComplete.php';
+        break;
 }

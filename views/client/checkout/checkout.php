@@ -105,9 +105,10 @@
                 <tbody>
                   <tr>
                     <th>SUBTOTAL</th>
-                    <input type="hidden" name="amount" value="<?= $_SESSION['total'] ?>" id="">
-                    <td><?= number_format($_SESSION['total'] * 1000, 0, ',', '.')  ?> đ</td>
+                    <input type="hidden" name="amount" value="<?= isset($_SESSION['total']) ? $_SESSION['total'] : 0 ?>" id="">
+                    <td><?= isset($_SESSION['total']) ? number_format($_SESSION['total'] * 1000, 0, ',', '.') . ' đ' : '0 đ' ?></td>
                   </tr>
+
                   <?php if (isset($_SESSION['coupon'])) : ?>
                     <tr>
                       <input type="hidden" name="coupon_id" value="<?= $_SESSION['coupon']['coupon_id'] ?>">
@@ -127,12 +128,12 @@
                       </td>
 
                     </tr>
-                    
+
                   <?php endforeach; ?>
-                  
+
                 </tbody>
                 <tfoot>
-                  
+
                   <tr>
                     <?php if (isset($_SESSION['coupon'])) : ?>
 
@@ -141,16 +142,19 @@
                   </tr>
                 <?php else : ?>
                   <th>TOTAL</th>
-                  <td><?= number_format($_SESSION['total'] * 1000, 0, ',', '.')  ?> đ</td>
+                  <td>
+                    <?= isset($_SESSION['total']) ? number_format($_SESSION['total'] * 1000, 0, ',', '.') . ' đ' : '0 đ' ?>
+                  </td>
                 <?php endif; ?>
+
                 </tfoot>
-                
+
               </table>
               <?php if (isset($_SESSION['errors']['shipping_id'])) : ?>
                 <p class="text-danger"><?= $_SESSION['errors']['shipping_id']  ?></p>
               <?php endif; ?>
             </div>
-            
+
             <div class="checkout__payment-methods">
               <!-- <div class="form-check">
                   <input class="form-check-input form-check-input_fill" type="radio" name="checkout_payment_method" id="checkout_payment_method_1">
@@ -171,8 +175,8 @@
                   Thanh toán khi nhận hàng
                 </label>
                 <?php if (isset($_SESSION['errors']['payment_method'])) : ?>
-                <p class="text-danger"><?= $_SESSION['errors']['payment_method']  ?></p>
-              <?php endif; ?>
+                  <p class="text-danger"><?= $_SESSION['errors']['payment_method']  ?></p>
+                <?php endif; ?>
               </div>
               <!-- <div class="form-check">
                   <input class="form-check-input form-check-input_fill" type="radio" name="checkout_payment_method" id="checkout_payment_method_4">
