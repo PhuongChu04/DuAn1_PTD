@@ -11,7 +11,7 @@ class Wishlist extends connect{
     public function addWishList(){
         $sql = "INSERT INTO favorites(user_id,product_id,quantity,created_at) VALUES (?,?,1,now())";
         $stmt = $this->connect()->prepare($sql);
-        return $stmt->execute([$_SESSION['user']['user_id'] ?? null, $_GET['product_id']]);
+        return $stmt->execute([$_SESSION['user']['user_id'] ?? null, $_GET['product_i   d']]);
     }
 
     public function deleteWishList(){

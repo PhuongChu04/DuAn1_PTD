@@ -8,6 +8,7 @@ require_once '../controllers/client/AuthController.php';
 require_once '../controllers/client/ProfileController.php';
 require_once '../controllers/client/HomeController.php';
 require_once('../controllers/client/CartController.php');
+require_once('../controllers/client/ShopController.php');
 require_once('../controllers/client/WishlistController.php');
 $action = isset($_GET['act']) ? $_GET['act'] : 'index';
 
@@ -22,6 +23,7 @@ $auth = new AuthController();
 $profile = new ProfileController();
 $home = new HomeController();
 $cart = new CartController();
+$shop = new ShopController();
 
 $withList = new WithListController();
 
@@ -145,5 +147,8 @@ switch ($action) {
         break;
     case 'wishlist-delete':
         $withList->delete();
+        break;
+    case 'shop':
+        $shop->index();
         break;
 }

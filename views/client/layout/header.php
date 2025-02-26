@@ -239,9 +239,9 @@
         <div class="overflow-hidden">
           <ul class="navigation__list list-unstyled position-relative">
             <li class="navigation__item">
-              <a href="#" class="navigation__link js-nav-right d-flex align-items-center">Home<svg class="ms-auto" width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_next_sm" /></svg></a>
+              <a href="#" class="navigation__link js-nav-right d-flex align-items-center">Trang chủ<svg class="ms-auto" width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_next_sm" /></svg></a>
               <div class="sub-menu position-absolute top-0 start-100 w-100 d-none">
-                <a href="#" class="navigation__link js-nav-left d-flex align-items-center border-bottom mb-2"><svg class="me-2" width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_prev_sm" /></svg>Home</a>
+                <a href="#" class="navigation__link js-nav-left d-flex align-items-center border-bottom mb-2"><svg class="me-2" width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_prev_sm" /></svg>Trang chủ</a>
                 <ul class="list-unstyled">
                   <li class="sub-menu__item"><a href="index.html" class="menu-link menu-link_us-s">Home 1</a></li>
                   <li class="sub-menu__item"><a href="https://uomo-html.flexkitux.com/Demo2/index.html" class="menu-link menu-link_us-s">Home 2</a></li>
@@ -497,11 +497,11 @@
             </div>
 
             <div class="search-popup js-hidden-content">
-              <form action="https://uomo-html.flexkitux.com/Demo1/search_result.html" method="GET" class="search-field container">
+              <form action="?act=shop" method="post" class="search-field container">
                 <p class="text-uppercase text-secondary fw-medium mb-4">Nhập tên sản phẩm bạn muốn tìm?</p>
                 <div class="position-relative">
-                  <input class="search-field__input search-popup__input w-100 fw-medium" type="text" name="search-keyword" placeholder="Tìm kiếm sản phẩm">
-                  <button class="btn-icon search-popup__submit" type="submit">
+                  <input class="search-field__input search-popup__input w-100 fw-medium" type="text" name="keyword" placeholder="Tìm kiếm sản phẩm">
+                  <button class="btn-icon search-popup__submit" type="submit" name="search">
                     <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_search" /></svg>
                   </button>
                   <button class="btn-icon btn-close-lg search-popup__reset" type="reset"></button>

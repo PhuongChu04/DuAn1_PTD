@@ -16,7 +16,7 @@ class WithListController extends Wishlist{
         }
         $checkWishList =  $this->checkWishList();
         if ($checkWishList) {
-            $_SESSION['error'] = 'Srn phẩm này đã co trong danh mục yêu thích của bạn';
+            $_SESSION['error'] = 'Sản phẩm này đã co trong danh mục yêu thích của bạn';
             header('Location:'. $_SERVER['HTTP_REFERER']);
             exit();
         }
@@ -35,7 +35,7 @@ class WithListController extends Wishlist{
     public function delete(){
         try {
             $this->deleteWishList();
-            $_SESSION['succes'] = 'Xóa sản phẩm yêu thích thành công';
+            $_SESSION['successs'] = 'Xóa sản phẩm yêu thích thành công';
             header('Location:'. $_SERVER['HTTP_REFERER']);
             exit();
         } catch (\Throwable $th) {

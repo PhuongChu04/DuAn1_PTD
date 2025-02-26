@@ -3,26 +3,24 @@
 <main>
     <div class="mb-4 pb-4"></div>
     <section class="my-account container">
-      <h2 class="page-title">Wishlist</h2>
+      <h2 class="page-title">Yêu thích</h2>
       <div class="row">
         <div class="col-lg-3">
           <ul class="account-nav">
-            <li><a href="account_dashboard.html" class="menu-link menu-link_us-s">Dashboard</a></li>
-            <li><a href="account_orders.html" class="menu-link menu-link_us-s">Orders</a></li>
-            <li><a href="account_edit_address.html" class="menu-link menu-link_us-s">Addresses</a></li>
-            <li><a href="account_edit.html" class="menu-link menu-link_us-s">Account Details</a></li>
-            <li><a href="account_wishlist.html" class="menu-link menu-link_us-s menu-link_active">Wishlist</a></li>
-            <li><a href="login_register.html" class="menu-link menu-link_us-s">Logout</a></li>
+            <li><a href="account_dashboard.html" class="menu-link menu-link_us-s">Tổng quan</a></li>
+            <li><a href="account_edit.html" class="menu-link menu-link_us-s">Thông tin tài khoản</a></li>
+            <li><a href="account_wishlist.html" class="menu-link menu-link_us-s menu-link_active">Yêu thích</a></li>
+            <li><a href="login_register.html" class="menu-link menu-link_us-s">Đăng xuất</a></li>
           </ul>
         </div>
         <div class="col-lg-9">
           <div class="page-content my-account__wishlist">
             <table class="orders-table">
                 <thead>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Action</th>
+                    <th>Sản phẩm</th>
+                    <th>Giá tiền</th>
+                    <th>Sốlượng</th>
+                    <th>Hoạt động</th>
                     <th></th>
                 </thead>
                 <tbody>
@@ -30,7 +28,7 @@
                     <tr>
                         <td>
                             <div class="shopping-cart__product-item">
-                                <a href="?act=product-detail&slug=<?= $favorite['slug'] ?>">
+                                <a href="?act=product_detail&slug=<?= $favorite['slug'] ?>">
                                     <img src="./images/product/<?= $favorite['image'] ?>" alt="" width="120px" height="120px">
                                 </a>
                                 <p><?= $favorite['name'] ?></p>
@@ -59,6 +57,7 @@
         </div>
       </div>
     </section>
+    <br>
 </main>
 
 <?php include '../views/client/layout/footer.php' ?>
