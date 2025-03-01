@@ -31,10 +31,10 @@ class CouponAdminController extends Coupon
             if (empty($_POST['coupon_code'])) {
                 $errors['coupon_code'] = 'Vui lòng nhập coupon_code';
             }
-            if (empty($_POST['start_date']) && $_POST['start_date'] < date('Y-m-d')) {
+            if (empty($_POST['start_date']) || $_POST['start_date'] < date('Y-m-d')) {
                 $errors['start_date'] = 'Vui lòng chọn ngày bắt đầu và phải lớn hơn hiện tại';
             }
-            if (empty($_POST['end_date']) && $_POST['end_date'] > $_POST['start_date']) {
+            if (empty($_POST['end_date']) || $_POST['end_date'] <= $_POST['start_date']) {
                 $errors['end_date'] = 'Vui lòng chọn ngày kết thúc và phải lớn hơn ngày bắt đầu';
             }
 
@@ -86,10 +86,10 @@ class CouponAdminController extends Coupon
             if (empty($_POST['coupon_code'])) {
                 $errors['coupon_code'] = 'Vui lòng nhập coupon_code';
             }
-            if (empty($_POST['start_date']) && $_POST['start_date'] < date('Y-m-d')) {
+            if (empty($_POST['start_date']) || $_POST['start_date'] < date('Y-m-d')) {
                 $errors['start_date'] = 'Vui lòng chọn ngày bắt đầu và phải lớn hơn hiện tại';
             }
-            if (empty($_POST['end_date']) && $_POST['end_date'] > $_POST['start_date']) {
+            if (empty($_POST['end_date']) || $_POST['end_date'] <= $_POST['start_date']) {
                 $errors['end_date'] = 'Vui lòng chọn ngày kết thúc và phải lớn hơn ngày bắt đầu';
             }
 

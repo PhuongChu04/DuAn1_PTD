@@ -4,12 +4,14 @@ require_once '../controllers/admin/CategoryAdminController.php';
 require_once '../controllers/admin/ProductAdminController.php';
 require_once '../controllers/admin/CouponAdminController.php';
 require_once '../controllers/admin/AuthAdminController.php';
+require_once '../controllers/admin/OrderAdminController.php';
 require_once '../controllers/client/AuthController.php';
 require_once '../controllers/client/ProfileController.php';
 require_once '../controllers/client/HomeController.php';
 require_once('../controllers/client/CartController.php');
 require_once('../controllers/client/ShopController.php');
 require_once('../controllers/client/WishlistController.php');
+require_once '../controllers/client/OrderController.php';
 $action = isset($_GET['act']) ? $_GET['act'] : 'index';
 
 $categoryAdmin = new CategoryAdminController();
@@ -17,15 +19,19 @@ $couponAdmin = new CouponAdminController();
 $authAdmin = new AuthAdminController();
 
 $productAdmin = new ProductAdminController();
-
+$orderAdmin = new OrderAdminController();
 //Client
 $auth = new AuthController();
 $profile = new ProfileController();
 $home = new HomeController();
 $cart = new CartController();
+
 $shop = new ShopController();
 
 $withList = new WithListController();
+
+$order = new OrderController();
+
 
 
 
@@ -95,7 +101,20 @@ switch ($action) {
         break;
 
 
+
         // Client
+
+    case 'order-list':
+        $orderAdmin->list();
+        break;
+    case 'order-edit':
+        $orderAdmin->edit();
+
+        break;
+    case 'order-update':
+        $orderAdmin->update();
+
+        break;
     case 'index':
         $home->index();
         break;
@@ -139,6 +158,7 @@ switch ($action) {
     case 'delete-cart':
         $cart->delete();
         break;
+
     case 'wishlist':
         $withList->index();
         break;
@@ -151,4 +171,16 @@ switch ($action) {
     case 'shop':
         $shop->index();
         break;
+
+    case 'checkout':
+        $order->index();
+        break;
+    case 'order':
+        $order->checkout();
+        break;
+
+    case 'checkout-complete':
+        include '../views/client/checkout/checkoutComplete.php';
+        break;
+
 }

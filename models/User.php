@@ -30,7 +30,7 @@ class User extends connect{
         $sql = 'SELECT * FROM users WHERE user_id=?';
         $stmt=$this->connect()->prepare($sql);
         $stmt->execute([$id]);
-        return $stmt->fetch();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
 
     }
 

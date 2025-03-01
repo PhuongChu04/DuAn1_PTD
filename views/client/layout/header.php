@@ -29,7 +29,10 @@
   <![endif]-->
 
   <!-- Document Title -->
-  <title>Home v1 | PTD Shop HTML5 Template</title>
+
+  <title>Home | PTD Shop HTML5 Template</title>
+
+  
 
 </head>
 
@@ -208,7 +211,7 @@
 
       <div class="logo">
         <a href="?act=index">
-          <img src="client/images/logo.png" alt="Uomo" class="logo__image d-block">
+          <img src="client/images/ptd.png" alt="Uomo" class="logo__image d-block">
         </a>
       </div><!-- /.logo -->
 
@@ -435,7 +438,7 @@
       <div class="header-desk header-desk_type_1">
         <div class="logo">
           <a href="?act=index">
-            <img src="client/images/logo.png" alt="Uomo" class="logo__image d-block">
+            <img src="client/images/ptd.png" width="90px" alt="Uomo" class="logo__image d-block">
           </a>
         </div>
 

@@ -201,7 +201,11 @@
                                    </a>
                                    <div class="dropdown-menu dropdown-menu-end">
                                         <!-- item-->
+<<<<<<< HEAD
                                         <h6 class="dropdown-header">Welcome <?= $_SESSION['user_admin']['name'] ?> </h6>
+=======
+                                        <h6 class="dropdown-header">Welcome Gaston!</h6>
+>>>>>>> dungvtph48187
                                         <a class="dropdown-item" href="pages-profile.html">
                                              <i class="bx bx-user-circle text-muted fs-18 align-middle me-1"></i><span class="align-middle">Profile</span>
                                         </a>
@@ -221,7 +225,11 @@
 
                                         <div class="dropdown-divider my-1"></div>
 
+<<<<<<< HEAD
                                         <a class="dropdown-item text-danger" href="?act=logout-admin">
+=======
+                                        <a class="dropdown-item text-danger" href="auth-signin.html">
+>>>>>>> dungvtph48187
                                              <i class="bx bx-log-out fs-18 align-middle me-1"></i><span class="align-middle">Logout</span>
                                         </a>
                                    </div>
@@ -590,7 +598,11 @@
                                    <ul class="nav sub-navbar-nav">
 
                                         <li class="sub-nav-item">
+<<<<<<< HEAD
                                              <a class="sub-nav-link" href="orders-list.html">List</a>
+=======
+                                             <a class="sub-nav-link" href="index.php?act=order-list">List</a>
+>>>>>>> dungvtph48187
                                         </li>
                                         <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="order-detail.html">Details</a>
