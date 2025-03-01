@@ -124,6 +124,10 @@
           </div>
           <div class="cart-table__header">
             <a href="?act=checkout" class=" btn btn-dark  "> Đặt hàng</a>
+            git checkout main
+git pull origin main
+git merge --allow-unrelated-histories dungvt
+git push origin main
           </div>
         </div>
       </div>
