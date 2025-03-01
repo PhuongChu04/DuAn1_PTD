@@ -1,11 +1,6 @@
 <?php
 require_once '../connect/connect.php';
-<<<<<<< HEAD
 class Order extends connect{
-=======
-class Order extends connect
-{
->>>>>>> dungvtph48187
     public function addOrder(
         $product_id,
         $variant_id,
@@ -28,11 +23,6 @@ class Order extends connect
     {
         return $this->connect()->lastInsertId();
     }
-<<<<<<< HEAD
-
-}
-?>
-=======
     public function getAllOrderDetail()
     {
         $sql = 'select * from order_details';
@@ -135,4 +125,3 @@ class Order extends connect
 
 
 }
->>>>>>> dungvtph48187

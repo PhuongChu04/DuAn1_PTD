@@ -19,12 +19,7 @@ class ProfileController extends User{
             if (count($errors)>0) {
                 header('Location:'.$_SERVER['HTTP_REFERER']);
                 exit();
-<<<<<<< HEAD
             }
-=======
-               }
-            
->>>>>>> dungvtph48187
             $_SESSION['errors'] = $errors;
            $user = $this->updateUser($_POST['name'], $_POST['email'], $_POST['phone'], $_POST['address']);
            if ($user) {

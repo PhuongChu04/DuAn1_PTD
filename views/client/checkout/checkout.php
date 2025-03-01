@@ -105,16 +105,10 @@
                 <tbody>
                   <tr>
                     <th>SUBTOTAL</th>
-<<<<<<< HEAD
                     <input type="hidden" name="amount" value="<?= isset($_SESSION['total']) ? $_SESSION['total'] : 0 ?>" id="">
                     <td><?= isset($_SESSION['total']) ? number_format($_SESSION['total'] * 1000, 0, ',', '.') . ' đ' : '0 đ' ?></td>
                   </tr>
 
-=======
-                    <input type="hidden" name="amount" value="<?= $_SESSION['total'] ?>">
-                    <td><?= number_format($_SESSION['total'] * 1000, 0, ',', '.')  ?> đ</td>
-                  </tr>
->>>>>>> dungvtph48187
                   <?php if (isset($_SESSION['coupon'])) : ?>
                     <tr>
                       <input type="hidden" name="coupon_id" value="<?= $_SESSION['coupon']['coupon_id'] ?>">
@@ -132,7 +126,6 @@
                         <input class="form-check-input form-check-input_fill" name="shipping_id" type="radio" value="<?= $ship['shipping_id'] ?>" id="free_shipping-<?= $key + 1 ?>">
                         <label class="form-check-label" for="free_shipping-<?= $key + 1 ?>"> <?= $ship['shipping_name'] ?> : <?= number_format($ship['shipping_price'] * 1000, 0, ',', '.')  ?> đ</label>
                       </td>
-<<<<<<< HEAD
 
                     </tr>
 
@@ -144,20 +137,11 @@
                   <tr>
                     <?php if (isset($_SESSION['coupon'])) : ?>
 
-=======
-                    </tr>
-                  <?php endforeach; ?>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <?php if (isset($_SESSION['coupon'])) : ?>
->>>>>>> dungvtph48187
                       <th>TOTAL</th>
                       <td><?= number_format(($_SESSION['total'] - $_SESSION['totalCoupon']) * 1000, 0, ',', '.')  ?> đ</td>
                   </tr>
                 <?php else : ?>
                   <th>TOTAL</th>
-<<<<<<< HEAD
                   <td>
                     <?= isset($_SESSION['total']) ? number_format($_SESSION['total'] * 1000, 0, ',', '.') . ' đ' : '0 đ' ?>
                   </td>
@@ -165,17 +149,11 @@
 
                 </tfoot>
 
-=======
-                  <td><?= number_format($_SESSION['total'] * 1000, 0, ',', '.')  ?> đ</td>
-                <?php endif; ?>
-                </tfoot>
->>>>>>> dungvtph48187
               </table>
               <?php if (isset($_SESSION['errors']['shipping_id'])) : ?>
                 <p class="text-danger"><?= $_SESSION['errors']['shipping_id']  ?></p>
               <?php endif; ?>
             </div>
-<<<<<<< HEAD
 
             <div class="checkout__payment-methods">
               <!-- <div class="form-check">
@@ -191,9 +169,6 @@
                     
                   </label>
                 </div> -->
-=======
-            <div class="checkout__payment-methods">
->>>>>>> dungvtph48187
               <div class="form-check">
                 <input class="form-check-input form-check-input_fill" type="radio" name="payment_method" id="payment_method_3" value="cod">
                 <label class="form-check-label" for="checkout_payment_method_3">
@@ -203,7 +178,6 @@
                   <p class="text-danger"><?= $_SESSION['errors']['payment_method']  ?></p>
                 <?php endif; ?>
               </div>
-<<<<<<< HEAD
               <!-- <div class="form-check">
                   <input class="form-check-input form-check-input_fill" type="radio" name="checkout_payment_method" id="checkout_payment_method_4">
                   <label class="form-check-label" for="checkout_payment_method_4">
@@ -212,8 +186,6 @@
                   </label>
                 </div> -->
 
-=======
->>>>>>> dungvtph48187
             </div>
             <button type="submit" name="checkout" class="btn btn-primary btn-checkout">Đặt hàng</button>
           </div>
@@ -222,8 +194,4 @@
     </form>
   </section>
 </main>
-<<<<<<< HEAD
-=======
-
->>>>>>> dungvtph48187
 <?php include '../views/client/layout/footer.php' ?>

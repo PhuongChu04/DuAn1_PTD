@@ -104,7 +104,6 @@ class CartController extends Cart
                 $_SESSION['success'] = 'Cập nhật giỏ hàng thành công';
                 exit();
             }
-<<<<<<< HEAD
         }elseif ($_SERVER['REQUEST_METHOD'] == 'POST'  && isset($_POST['apply_coupon'])) {
             $coupon = $this->getCouponByCode($_POST['coupon_code']);
             if (!$coupon) {
@@ -126,8 +125,6 @@ class CartController extends Cart
                 exit();
             }
 
-=======
->>>>>>> dungvtph48187
         }
     }
     public function delete()
@@ -143,7 +140,6 @@ class CartController extends Cart
             exit();
         }
     }
-<<<<<<< HEAD
     
     public function handleCoupon($coupon, $total){
         if ($coupon['type'] == 'Percentage') {
@@ -154,7 +150,5 @@ class CartController extends Cart
 
         return $totalCoupon;
     }
-=======
->>>>>>> dungvtph48187
 
 }
