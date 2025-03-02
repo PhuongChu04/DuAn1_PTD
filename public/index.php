@@ -4,6 +4,7 @@ require_once '../controllers/admin/OrderAdminController.php';
 require_once '../controllers/admin/CategoryAdminController.php';
 require_once '../controllers/admin/ProductAdminController.php';
 require_once '../controllers/admin/CouponAdminController.php';
+require_once '../controllers/admin/AuthAdminController.php';
 require_once '../controllers/client/AuthController.php';
 require_once '../controllers/client/ProfileController.php';
 require_once '../controllers/client/HomeController.php';
@@ -13,9 +14,14 @@ $action = isset($_GET['act']) ? $_GET['act'] : 'index';
 
 $categoryAdmin = new CategoryAdminController();
 $couponAdmin = new CouponAdminController();
+
+$authAdmin = new AuthAdminController();
+
 $productAdmin = new ProductAdminController();
+
+
 $orderAdmin = new OrderAdminController();
-//Client
+
 $auth = new AuthController();
 $profile = new ProfileController();
 $home = new HomeController();
@@ -25,8 +31,20 @@ $order = new OrderController();
 
 
 
+
+
 switch ($action) {
+    case 'auth':
+        $authAdmin->singin();
+        break;
+    case 'logout-admin':
+        $authAdmin->logout();
+        break;
     case 'admin':
+        // $authAdmin->middLeware();
+
+
+
         include '../views/admin/index.php';
         break;
     case 'product':
@@ -80,6 +98,11 @@ switch ($action) {
     case 'coupon-delete':
         $couponAdmin->delete();
         break;
+
+
+
+    // Client
+
     case 'order-list':
         $orderAdmin->list();
         break;
@@ -94,7 +117,6 @@ switch ($action) {
 
 
 
-    // Client
     case 'index':
         $home->index();
         break;
@@ -144,4 +166,20 @@ switch ($action) {
     case 'order':
         $order->checkout();
         break;
+
+    case 'order-cl':
+        $profile->indexOderClient();
+        break;
+    case 'trash-order':
+        $profile->trashOrder();
+        break;
+    case 'cancel-order':
+        $profile->cancelOrder();
+       break;
+    case 'checkout-complete':
+        include '../views/client/checkout/checkoutComplete.php';
+        break;
+
+
 }
+

@@ -109,6 +109,10 @@
                   <th>Tổng cộng</th>
                   <td><?= number_format($sum * 1000, 0, ',', '.') ?>đ</td>
                 </tr>
+                <tr>
+                  <th>Tiền giảm giá:</th>
+                  <td>-<?= number_format(($_SESSION['totalCoupon'] ?? 0) * 1000, 0, ',', '.') ?>đ</td>
+                </tr>
 
                 <tr>
                   <th>Tổng cộng</th>
@@ -119,7 +123,7 @@
             </table>
           </div>
           <div class="cart-table__header">
-            <a href="?act=checkout" class=" btn btn-dark  "> Đặt hàng</a>
+            <a href="?act=checkout" class=" btn btn-dark  ">Đặt hàng</a>
           </div>
         </div>
       </div>

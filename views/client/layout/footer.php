@@ -94,7 +94,7 @@
       </div><!-- /.row-cols-5 -->
     </div><!-- /.footer-middle container -->
 
-    <div class="footer-bottom container">
+    <!-- <div class="footer-bottom container">
       <div class="d-block d-md-flex align-items-center">
         <span class="footer-copyright me-auto">©2023 Uomo</span>
         <div class="footer-settings d-block d-md-flex align-items-center">
@@ -117,10 +117,10 @@
               <option value="2">€ EURO</option>
             </select>
           </div>
-        </div><!-- /.footer-settings -->
-      </div><!-- /.d-flex -->
-    </div><!-- /.footer-bottom container -->
-  </footer><!-- /.footer footer_type_1 -->
+        </div>
+      </div>
+    </div>
+  </footer> -->
   <!-- End Footer Type 1 -->
 
   <!-- Mobile Fixed Footer -->

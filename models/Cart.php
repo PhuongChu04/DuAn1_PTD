@@ -3,8 +3,11 @@ require_once '../connect/connect.php';
 
 class Cart extends connect {
     public function getAllCart(){
-        session_start(); // Đảm bảo session đã được khởi tạo
-    
+
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
         // Kiểm tra xem user_id có tồn tại trong session không
         if (!isset($_SESSION['user']['user_id'])) {
             return []; // Trả về mảng rỗng nếu chưa đăng nhập
@@ -62,5 +65,14 @@ class Cart extends connect {
         $stmt = $this->connect()->prepare($sql);
         return $stmt->execute([$cart_id]);
     }
+
+
+    public function getCouponByCode($coupon_code){
+        $sql = 'SELECT * FROM coupons WHERE coupon_code = ?';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt ->execute([$coupon_code]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
    
 }
