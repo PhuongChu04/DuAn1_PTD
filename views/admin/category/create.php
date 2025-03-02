@@ -40,8 +40,8 @@
                                     <label for="meta-title" class="form-label">Trạng thái</label>
                                     <select class="form-control" id="crater" name="status" data-choices data-choices-groups data-placeholder="Chọn trạng thái">
                                         <option value="">Chọn trạng thái</option>
-                                        <option value="Active">Ẩn</option>
-                                        <option value="Hidden">Hiện</option>
+                                        <option value="Active">Hiện</option>
+                                        <option value="Hidden">Ẩn</option>
                                     </select>
                                     <?php if (isset($_SESSION['errors']['status'])) : ?>
                                         <p class="text-danger"><?= $_SESSION['errors']['status'] ?></p>

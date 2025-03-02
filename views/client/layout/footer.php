@@ -46,59 +46,50 @@
         </div><!-- /.footer-column -->
 
         <div class="footer-column footer-menu mb-4 mb-lg-0">
-          <h5 class="sub-menu__title text-uppercase">Company</h5>
+          <h5 class="sub-menu__title text-uppercase">Thông tin</h5>
           <ul class="sub-menu__list list-unstyled">
-            <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">About Us</a></li>
-            <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Careers</a></li>
-            <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Affiliates</a></li>
-            <li class="sub-menu__item"><a href="blog_list1.html" class="menu-link menu-link_us-s">Blog</a></li>
-            <li class="sub-menu__item"><a href="contact.html" class="menu-link menu-link_us-s">Contact Us</a></li>
+            <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Giơi thiệu</a></li>
+            <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Sản phẩm chi tiết</a></li>
+            <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Chi nhánh</a></li>
+            <li class="sub-menu__item"><a href="blog_list1.html" class="menu-link menu-link_us-s">Liên hệ</a></li>
           </ul>
         </div><!-- /.footer-column -->
         <div class="footer-column footer-menu mb-4 mb-lg-0">
-          <h5 class="sub-menu__title text-uppercase">Shop</h5>
+          <h5 class="sub-menu__title text-uppercase">Cửa hàng</h5>
           <ul class="sub-menu__list list-unstyled">
-            <li class="sub-menu__item"><a href="shop2.html" class="menu-link menu-link_us-s">New Arrivals</a></li>
-            <li class="sub-menu__item"><a href="shop3.html" class="menu-link menu-link_us-s">Accessories</a></li>
-            <li class="sub-menu__item"><a href="shop4.html" class="menu-link menu-link_us-s">Men</a></li>
-            <li class="sub-menu__item"><a href="shop5.html" class="menu-link menu-link_us-s">Women</a></li>
-            <li class="sub-menu__item"><a href="shop1.html" class="menu-link menu-link_us-s">Shop All</a></li>
+            <li class="sub-menu__item"><a href="shop2.html" class="menu-link menu-link_us-s">Sản phẩm mới</a></li>
+            <li class="sub-menu__item"><a href="shop3.html" class="menu-link menu-link_us-s">Đa dạng</a></li>
+            <li class="sub-menu__item"><a href="shop4.html" class="menu-link menu-link_us-s">Nam</a></li>
+            <li class="sub-menu__item"><a href="shop5.html" class="menu-link menu-link_us-s">Phong cách trẻ trung</a></li>
           </ul>
         </div><!-- /.footer-column -->
         <div class="footer-column footer-menu mb-4 mb-lg-0">
-          <h5 class="sub-menu__title text-uppercase">Help</h5>
+          <h5 class="sub-menu__title text-uppercase">Hỗ trợ</h5>
           <ul class="sub-menu__list list-unstyled">
-            <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Customer Service</a></li>
-            <li class="sub-menu__item"><a href="account_dashboard.html" class="menu-link menu-link_us-s">My Account</a></li>
-            <li class="sub-menu__item"><a href="store_location.html" class="menu-link menu-link_us-s">Find a Store</a></li>
-            <li class="sub-menu__item"><a href="terms.html" class="menu-link menu-link_us-s">Legal & Privacy</a></li>
-            <li class="sub-menu__item"><a href="contact.html" class="menu-link menu-link_us-s">Contact</a></li>
-            <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Gift Card</a></li>
+            <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Hỗ trợ khách hàng</a></li>
+            <li class="sub-menu__item"><a href="account_dashboard.html" class="menu-link menu-link_us-s">Tư vấn nhiệt tình</a></li>
+            <li class="sub-menu__item"><a href="about.html" class="menu-link menu-link_us-s">Liên hệ</a></li>
           </ul>
         </div><!-- /.footer-column -->
-        <div class="footer-column footer-newsletter col-12 mb-4 mb-lg-0">
-          <h5 class="sub-menu__title text-uppercase">Subscribe</h5>
+        <!-- <div class="footer-column footer-newsletter col-12 mb-4 mb-lg-0"> -->
+          <!-- <h5 class="sub-menu__title text-uppercase">Subscribe</h5>
           <p>Be the first to get the latest news about trends, promotions, and much more!</p>
           <form action="https://uomo-html.flexkitux.com/Demo1/index.html" class="footer-newsletter__form position-relative bg-body">
             <input class="form-control border-white" type="email" name="email" placeholder="Your email address">
             <input class="btn-link fw-medium bg-white position-absolute top-0 end-0 h-100" type="submit" value="JOIN">
-          </form>
+          </form> -->
 
-          <div class="mt-4 pt-3">
+          <!-- <div class="mt-4 pt-3">
             <strong class="fw-medium">Secure payments</strong>
             <p class="mt-2">
               <img loading="lazy" src="client/images/payment-options.png" alt="Acceptable payment gateways" class="mw-100">
             </p>
-          </div>
-        </div><!-- /.footer-column -->
+          </div> -->
+        <!-- </div>/.footer-column -->
       </div><!-- /.row-cols-5 -->
     </div><!-- /.footer-middle container -->
 
-<<<<<<< HEAD
     <!-- <div class="footer-bottom container">
-=======
-    <div class="footer-bottom container">
->>>>>>> dungvtph48187
       <div class="d-block d-md-flex align-items-center">
         <span class="footer-copyright me-auto">©2023 Uomo</span>
         <div class="footer-settings d-block d-md-flex align-items-center">
@@ -121,17 +112,10 @@
               <option value="2">€ EURO</option>
             </select>
           </div>
-<<<<<<< HEAD
         </div>
       </div>
     </div>
   </footer> -->
-=======
-        </div><!-- /.footer-settings -->
-      </div><!-- /.d-flex -->
-    </div><!-- /.footer-bottom container -->
-  </footer><!-- /.footer footer_type_1 -->
->>>>>>> dungvtph48187
   <!-- End Footer Type 1 -->
 
   <!-- Mobile Fixed Footer -->

@@ -13,6 +13,8 @@ require_once '../controllers/client/ProfileController.php';
 require_once '../controllers/client/HomeController.php';
 require_once('../controllers/client/CartController.php');
 require_once '../controllers/client/OrderController.php';
+require_once('../controllers/client/ShopController.php');
+require_once('../controllers/client/WishlistController.php');
 $action = isset($_GET['act']) ? $_GET['act'] : 'index';
 
 $categoryAdmin = new CategoryAdminController();
@@ -28,6 +30,9 @@ $auth = new AuthController();
 $profile = new ProfileController();
 $home = new HomeController();
 $cart = new CartController();
+$shop = new ShopController();
+
+$withList = new WithListController();
 
 $order = new OrderController();
 
@@ -163,5 +168,16 @@ switch ($action) {
         break;
     case 'checkout-complete':
         include '../views/client/checkout/checkoutComplete.php';
+    case 'wishlist':
+        $withList->index();
+        break;
+    case 'wishlist-add':
+        $withList->add();
+        break;
+    case 'wishlist-delete':
+        $withList->delete();
+        break;
+    case 'shop':
+        $shop->index();
         break;
 }

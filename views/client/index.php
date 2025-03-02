@@ -165,14 +165,14 @@ $categories = $categoryController->getCategoryImages();
           <a class="nav-link nav-link_underscore active" id="collections-tab-1-trigger" data-bs-toggle="tab" href="#collections-tab-1" role="tab" aria-controls="collections-tab-1" aria-selected="true">Tất cả sản phẩm</a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link nav-link_underscore" id="collections-tab-2-trigger" data-bs-toggle="tab" href="#collections-tab-2" role="tab" aria-controls="collections-tab-2" aria-selected="true">New Arrivals</a>
+          <a class="nav-link nav-link_underscore" id="collections-tab-2-trigger" data-bs-toggle="tab" href="#collections-tab-2" role="tab" aria-controls="collections-tab-2" aria-selected="true">Sản phẩm bán chạy</a>
         </li>
-        <li class="nav-item" role="presentation">
+        <!-- <li class="nav-item" role="presentation">
           <a class="nav-link nav-link_underscore" id="collections-tab-3-trigger" data-bs-toggle="tab" href="#collections-tab-3" role="tab" aria-controls="collections-tab-3" aria-selected="true">Best Seller</a>
-        </li>
-        <li class="nav-item" role="presentation">
+        </li> -->
+        <!-- <li class="nav-item" role="presentation">
           <a class="nav-link nav-link_underscore" id="collections-tab-4-trigger" data-bs-toggle="tab" href="#collections-tab-4" role="tab" aria-controls="collections-tab-4" aria-selected="true">Top Rated</a>
-        </li>
+        </li> -->
       </ul>
 
       <div class="tab-content pt-2" id="collections-tab-content">
@@ -207,9 +207,9 @@ $categories = $categoryController->getCategoryImages();
                     <span class="reviews-note text-lowercase text-secondary ms-1">0 reviews</span>
                   </div>
 
-                  <button class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
+                  <a href="?act=wishlist-add&product_id=<?= $pro['product_id'] ?>" class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
                     <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -1156,24 +1156,24 @@ $categories = $categoryController->getCategoryImages();
           <div class="service-promotion__icon mb-4">
             <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_shipping" /></svg>
           </div>
-          <h3 class="service-promotion__title h5 text-uppercase">Fast And Free Delivery</h3>
-          <p class="service-promotion__content text-secondary">Free delivery for all orders over $140</p>
+          <h3 class="service-promotion__title h5 text-uppercase">Giao hàng nhanh và miến phí vận chuyển</h3>
+          <p class="service-promotion__content text-secondary">Giao hàng nhanh và miến phí vận chuyển</p>
         </div><!-- /.col-md-4 text-center-->
 
         <div class="col-md-4 text-center mb-5 mb-md-0">
           <div class="service-promotion__icon mb-4">
             <svg width="53" height="52" viewBox="0 0 53 52" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_headphone" /></svg>
           </div>
-          <h3 class="service-promotion__title h5 text-uppercase">24/7 Customer Support</h3>
-          <p class="service-promotion__content text-secondary">Friendly 24/7 customer support</p>
+          <h3 class="service-promotion__title h5 text-uppercase">Hỗ trợ 24/7</h3>
+          <p class="service-promotion__content text-secondary">Luôn hỗ trợ mọi người 24/7</p>
         </div><!-- /.col-md-4 text-center-->
 
         <div class="col-md-4 text-center mb-4 pb-1 mb-md-0">
           <div class="service-promotion__icon mb-4">
             <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_shield" /></svg>
           </div>
-          <h3 class="service-promotion__title h5 text-uppercase">Money Back Guarantee</h3>
-          <p class="service-promotion__content text-secondary">We return money within 30 days</p>
+          <h3 class="service-promotion__title h5 text-uppercase">Hoàn tiền</h3>
+          <p class="service-promotion__content text-secondary">Chúng tôi hoàn tiền nếu sản phẩm lỗi</p>
         </div><!-- /.col-md-4 text-center-->
       </div><!-- /.row -->
     </section><!-- /.service-promotion container -->

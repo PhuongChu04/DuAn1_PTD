@@ -239,9 +239,9 @@
         <div class="overflow-hidden">
           <ul class="navigation__list list-unstyled position-relative">
             <li class="navigation__item">
-              <a href="#" class="navigation__link js-nav-right d-flex align-items-center">Home<svg class="ms-auto" width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_next_sm" /></svg></a>
+              <a href="#" class="navigation__link js-nav-right d-flex align-items-center">Trang chủ<svg class="ms-auto" width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_next_sm" /></svg></a>
               <div class="sub-menu position-absolute top-0 start-100 w-100 d-none">
-                <a href="#" class="navigation__link js-nav-left d-flex align-items-center border-bottom mb-2"><svg class="me-2" width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_prev_sm" /></svg>Home</a>
+                <a href="#" class="navigation__link js-nav-left d-flex align-items-center border-bottom mb-2"><svg class="me-2" width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg"><use href="#icon_prev_sm" /></svg>Trang chủ</a>
                 <ul class="list-unstyled">
                   <li class="sub-menu__item"><a href="index.html" class="menu-link menu-link_us-s">Home 1</a></li>
                   <li class="sub-menu__item"><a href="https://uomo-html.flexkitux.com/Demo2/index.html" class="menu-link menu-link_us-s">Home 2</a></li>
@@ -442,11 +442,11 @@
         <nav class="navigation">
           <ul class="navigation__list list-unstyled d-flex">
             <li class="navigation__item">
-              <a href="#" class="navigation__link">Home</a>
+              <a href="?act=index" class="navigation__link">Trang chủ</a>
               
             </li>
             <li class="navigation__item">
-              <a href="#" class="navigation__link">Shop</a>
+              <a href="#" class="navigation__link">Sản phẩm</a>
               <div class="mega-menu">
                 <div class="container d-flex">
                   
@@ -454,35 +454,35 @@
 
                   <div class="mega-menu__media col">
                     <div class="position-relative">
-                      <img loading="lazy" class="mega-menu__img" src="client/images/mega-menu-item.jpg" alt="New Horizons">
-                      <div class="mega-menu__media-content content_abs content_left content_bottom">
+                      <!-- <img loading="lazy" class="mega-menu__img" src="client/images/mega-menu-item.jpg" alt="New Horizons"> -->
+                      <!-- <div class="mega-menu__media-content content_abs content_left content_bottom">
                         <h3>NEW</h3>
                         <h3 class="mb-0">HORIZONS</h3>
                         <a href="shop1.html" class="btn-link default-underline fw-medium">SHOP NOW</a>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div><!-- /.container d-flex -->
               </div>
             </li>
-            <li class="navigation__item">
+            <!-- <li class="navigation__item">
               <a href="#" class="navigation__link">Blog</a>
               <ul class="default-menu list-unstyled">
                 <li class="sub-menu__item"><a href="blog_list1.html" class="menu-link menu-link_us-s">Blog V1</a></li>
                 <li class="sub-menu__item"><a href="blog_list2.html" class="menu-link menu-link_us-s">Blog V2</a></li>
                 <li class="sub-menu__item"><a href="blog_list3.html" class="menu-link menu-link_us-s">Blog V3</a></li>
                 <li class="sub-menu__item"><a href="blog_single.html" class="menu-link menu-link_us-s">Blog Detail</a></li>
-              </ul><!-- /.box-menu -->
-            </li>
-            <li class="navigation__item">
+              </ul>
+            </li> -->
+            <!-- <li class="navigation__item">
               <a href="#" class="navigation__link">Pages</a>
              
             </li>
             <li class="navigation__item">
               <a href="about.html" class="navigation__link">About</a>
-            </li>
+            </li> -->
             <li class="navigation__item">
-              <a href="contact.html" class="navigation__link">Contact</a>
+              <a href="contact.html" class="navigation__link">Liên hệ</a>
             </li>
           </ul><!-- /.navigation__list -->
         </nav><!-- /.navigation -->
@@ -497,11 +497,11 @@
             </div>
 
             <div class="search-popup js-hidden-content">
-              <form action="https://uomo-html.flexkitux.com/Demo1/search_result.html" method="GET" class="search-field container">
+              <form action="?act=shop" method="post" class="search-field container">
                 <p class="text-uppercase text-secondary fw-medium mb-4">Nhập tên sản phẩm bạn muốn tìm?</p>
                 <div class="position-relative">
-                  <input class="search-field__input search-popup__input w-100 fw-medium" type="text" name="search-keyword" placeholder="Tìm kiếm sản phẩm">
-                  <button class="btn-icon search-popup__submit" type="submit">
+                  <input class="search-field__input search-popup__input w-100 fw-medium" type="text" name="keyword" placeholder="Tìm kiếm sản phẩm">
+                  <button class="btn-icon search-popup__submit" type="submit" name="search">
                     <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_search" /></svg>
                   </button>
                   <button class="btn-icon btn-close-lg search-popup__reset" type="reset"></button>
@@ -534,7 +534,7 @@
                </a>
                <?php endif; ?>
 
-          <a class="header-tools__item" href="account_wishlist.html">
+          <a class="header-tools__item" href="?act=wishlist">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
           </a>
 
