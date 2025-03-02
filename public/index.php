@@ -25,7 +25,7 @@ $productAdmin = new ProductAdminController();
 
 
 $orderAdmin = new OrderAdminController();
-//Client
+
 $auth = new AuthController();
 $profile = new ProfileController();
 $home = new HomeController();
@@ -102,6 +102,11 @@ switch ($action) {
     case 'coupon-delete':
         $couponAdmin->delete();
         break;
+
+
+
+    // Client
+
     case 'order-list':
         $orderAdmin->list();
         break;
@@ -116,7 +121,6 @@ switch ($action) {
 
 
 
-    // Client
     case 'index':
         $home->index();
         break;
@@ -166,8 +170,7 @@ switch ($action) {
     case 'order':
         $order->checkout();
         break;
-    case 'checkout-complete':
-        include '../views/client/checkout/checkoutComplete.php';
+   
     case 'wishlist':
         $withList->index();
         break;
@@ -180,4 +183,20 @@ switch ($action) {
     case 'shop':
         $shop->index();
         break;
+
+    case 'order-cl':
+        $profile->indexOderClient();
+        break;
+    case 'trash-order':
+        $profile->trashOrder();
+        break;
+    case 'cancel-order':
+        $profile->cancelOrder();
+       break;
+    case 'checkout-complete':
+        include '../views/client/checkout/checkoutComplete.php';
+        break;
+
+
 }
+

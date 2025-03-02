@@ -4,7 +4,7 @@ class AuthAdminController extends User
 {
     public function isAdmin()
     {
-        return isset($_SESSION['user_admin']) && $_SESSION['user_admin']['role_is'] == 2;
+        return isset($_SESSION['user_admin']) && $_SESSION['user_admin']['role_id'] == 2;
     }
 
     public function middLeware()

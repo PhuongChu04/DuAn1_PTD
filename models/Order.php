@@ -15,9 +15,25 @@ class Order extends connect{
     public function addOrderDetail($name, $email, $phone, $address, $amount, $note, $shipping_id, $coupon_id, $payment_method)
     {
         $sql = 'INSERT INTO order_details(name,email,phone,address,amount,note,shipping_id,user_id,coupon_id,payment_method,created_at,updated_at)
-                 VALUES (?,?,?,?,?,?,?,?,?,?,now(),now())';
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?)';
+
         $stmt = $this->connect()->prepare($sql);
-        return $stmt->execute([$name, $email, $phone, $address, $amount, $note, $shipping_id, $_SESSION['user']['user_id'], $coupon_id, $payment_method]);
+        $now = date('Y-m-d H:i:s'); // Lấy thời gian hiện tại
+
+        return $stmt->execute([
+            $name,
+            $email,
+            $phone,
+            $address,
+            $amount,
+            $note,
+            $shipping_id,
+            $_SESSION['user']['user_id'],
+            $coupon_id,
+            $payment_method,
+            $now,
+            $now
+        ]);
     }
     public function getLastInsertId()
     {
@@ -33,12 +49,22 @@ class Order extends connect{
 
     }
     public function getOrderDetailById()
-    {
-        $sql = 'select * from order_details where order_detail_id = ?';
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$_GET['order_detail_id']]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+{
+    if (!isset($_GET['order_detail_id']) || empty($_GET['order_detail_id'])) {
+        return false; // Trả về false nếu không có order_detail_id
     }
+
+    $sql = 'SELECT * FROM order_details WHERE order_detail_id = ?';
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$_GET['order_detail_id']]);
+    $orderDetail = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$orderDetail) {
+        error_log("LỖI: Không tìm thấy order_detail_id = " . $_GET['order_detail_id']);
+    }
+
+    return $orderDetail;
+}
     public function getOrderById()
     {
         $sql = 'SELECT
@@ -63,28 +89,45 @@ class Order extends connect{
     }
     public function getCouponByID()
     {
-        $sql = 'SELECT  
-        coupons.*, 
-        coupons.type AS type, 
-        coupons.coupon_value AS coupon_value
-    FROM order_details
-    LEFT JOIN coupons ON coupons.coupon_id = order_details.coupon_id
-    WHERE order_details.order_detail_id = ?';
+        if (!isset($_GET['order_detail_id']) || empty($_GET['order_detail_id'])) {
+            return false;
+        }
+    
+        $sql = 'SELECT coupons.*, coupons.type AS type, coupons.coupon_value AS coupon_value
+                FROM order_details
+                LEFT JOIN coupons ON coupons.coupon_id = order_details.coupon_id
+                WHERE order_details.order_detail_id = ?';
+        
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$_GET['order_detail_id']]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $coupon = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+        if (!$coupon) {
+            error_log("LỖI: Không tìm thấy mã giảm giá cho order_detail_id = " . $_GET['order_detail_id']);
+        }
+    
+        return $coupon;
     }
     public function getShipByID()
-    {
-        $sql = 'SELECT  
-        ships.*
-    FROM order_details
-    LEFT JOIN ships ON ships.shipping_id = order_details.shipping_id
-    WHERE order_details.order_detail_id = ?';
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$_GET['order_detail_id']]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+{
+    if (!isset($_GET['order_detail_id']) || empty($_GET['order_detail_id'])) {
+        return false;
     }
+
+    $sql = 'SELECT ships.* FROM order_details
+            LEFT JOIN ships ON ships.shipping_id = order_details.shipping_id
+            WHERE order_details.order_detail_id = ?';
+    
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute([$_GET['order_detail_id']]);
+    $ship = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$ship) {
+        error_log("LỖI: Không tìm thấy thông tin vận chuyển cho order_detail_id = " . $_GET['order_detail_id']);
+    }
+
+    return $ship;
+}
     public function updateOrder($status)
     {
         $sql = 'SELECT status FROM order_details WHERE order_detail_id= ? ';
@@ -93,10 +136,10 @@ class Order extends connect{
         $currentStatus = $stmt->fetchColumn();
 
         $allowedStatus = [
-            'Pending' => ['Confirmed'],
-            'Confirmed' => ['Shipped', 'Canceled'],
-            'Shipped' => ['Delivered'],
-            'Delivered' => []
+            'Đang chờ' => ['Đã xác nhận'],
+            'Đã xác nhận' => ['Đang giao'],
+            'Đang giao' => ['Đã giao'],
+            'Đã giao' => []
         ];
         if (!isset($allowedStatus[$currentStatus]) || !in_array($status, $allowedStatus[$currentStatus])) {
             return false;
@@ -113,12 +156,14 @@ class Order extends connect{
         $stmt->execute([$_SESSION['user']['user_id']]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    
     public function cancel()
     {
-        $sql = 'UPDATE order_details SET status="Canceled", updated_at= now()  WHERE order_detail_id= ? ';
+        $sql = 'DELETE FROM order_details where order_detail_id=?';
         $stmt = $this->connect()->prepare($sql);
         return $stmt->execute([$_GET['order_detail_id']]);
     }
+    
 
 
 

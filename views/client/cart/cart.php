@@ -111,7 +111,7 @@
                 </tr>
                 <tr>
                   <th>Tiền giảm giá:</th>
-                  <td>-<?= number_format(($_SESSION['totalCoupon'])* 1000, 0, ',', '.') ?>đ</td>
+                  <td>-<?= number_format(($_SESSION['totalCoupon'] ?? 0) * 1000, 0, ',', '.') ?>đ</td>
                 </tr>
 
                 <tr>
@@ -123,11 +123,7 @@
             </table>
           </div>
           <div class="cart-table__header">
-            <a href="?act=checkout" class=" btn btn-dark  "> Đặt hàng</a>
-            git checkout main
-git pull origin main
-git merge --allow-unrelated-histories dungvt
-git push origin main
+            <a href="?act=checkout" class=" btn btn-dark  ">Đặt hàng</a>
           </div>
         </div>
       </div>

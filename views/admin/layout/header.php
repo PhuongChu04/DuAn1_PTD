@@ -527,9 +527,9 @@
                                         <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="product-details.html">Details</a>
                                         </li> -->
-                                        <li class="sub-nav-item">
+                                        <!-- <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="index.php?act=product-edit">Edit</a>
-                                        </li>
+                                        </li> -->
                                         <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="index.php?act=product-create">Create</a>
                                         </li>
@@ -549,9 +549,7 @@
                                         <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="index.php?act=category">List</a>
                                         </li>                         
-                                        <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="index.php?act=category-edit">Edit</a>
-                                        </li>
+                                     
                                         <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="index.php?act=category-create">Create</a>
                                         </li>
@@ -592,15 +590,7 @@
                                         <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="index.php?act=order-list">List</a>
                                         </li>
-                                        <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="order-detail.html">Details</a>
-                                        </li>
-                                        <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="order-cart.html">Cart</a>
-                                        </li>
-                                        <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="order-checkout.html">Check Out</a>
-                                        </li>
+                                        
                                    </ul>
                               </div>
                          </li>
