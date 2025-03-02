@@ -1,4 +1,20 @@
 <?php include '../views/client/layout/header.php' ?>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const shippingRadios = document.querySelectorAll("input[name='shipping_id']");
+    const totalPriceElement = document.querySelector("tfoot tr td"); // Vị trí hiển thị tổng tiền
+    let baseTotal = <?= isset($_SESSION['total']) ? ($_SESSION['total'] * 1000) - (isset($_SESSION['totalCoupon']) ? ($_SESSION['totalCoupon'] * 1000) : 0) : 0 ?>; // Lấy tổng giá trị đơn hàng ban đầu
+
+    shippingRadios.forEach(radio => {
+        radio.addEventListener("change", function () {
+            let shippingPrice = parseInt(this.nextElementSibling.textContent.replace(/\D/g, '')); // Lấy giá vận chuyển
+            let newTotal = baseTotal + shippingPrice;
+            totalPriceElement.textContent = newTotal.toLocaleString('vi-VN') + " đ"; // Cập nhật giá trị tổng
+        });
+    });
+});
+
+</script>
 <main>
   <div class="mb-4 pb-4"></div>
   <div class="mb-4 pb-4"></div>
@@ -133,20 +149,20 @@
 
                 </tbody>
                 <tfoot>
-
                   <tr>
                     <?php if (isset($_SESSION['coupon'])) : ?>
-
                       <th>TOTAL</th>
-                      <td><?= number_format(($_SESSION['total'] - $_SESSION['totalCoupon']) * 1000, 0, ',', '.')  ?> đ</td>
+                      <td>
+                        <?= number_format((($_SESSION['total'] - $_SESSION['totalCoupon']) * 1000) + ($ship['shipping_price'] * 1000), 0, ',', '.') ?> đ
+                      </td>
                   </tr>
                 <?php else : ?>
                   <th>TOTAL</th>
                   <td>
-                    <?= isset($_SESSION['total']) ? number_format($_SESSION['total'] * 1000, 0, ',', '.') . ' đ' : '0 đ' ?>
+                    <?= isset($_SESSION['total']) ? number_format(($_SESSION['total'] * 1000) + ($ship['shipping_price'] * 1000), 0, ',', '.') . ' đ' : '0 đ' ?>
                   </td>
+                  </tr>
                 <?php endif; ?>
-
                 </tfoot>
 
               </table>

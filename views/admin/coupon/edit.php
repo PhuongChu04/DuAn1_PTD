@@ -13,7 +13,7 @@
 
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-lg-6">
                                     <div class="d-flex gap-2 align-items-center">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="status" value="Hidden" <?= $coupon['status'] == 'Hidden' ? 'checked' : '' ?> id="flexRadioDefault9" checked="">
@@ -24,7 +24,7 @@
 
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-6">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="status" value="Active" <?= $coupon['status'] == 'Active' ? 'checked' : '' ?> id="flexRadioDefault10">
                                         <label class="form-check-label" for="flexRadioDefault10">
@@ -32,14 +32,14 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <!-- <div class="col-lg-4">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="status" value="Futute Plan" <?= $coupon['status'] == 'Futute Plan' ? 'checked' : '' ?> id="flexRadioDefault11">
                                         <label class="form-check-label" for="flexRadioDefault11">
                                             Kế hoạch tương lai
                                         </label>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
