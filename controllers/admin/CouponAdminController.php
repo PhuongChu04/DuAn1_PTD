@@ -92,7 +92,6 @@ class CouponAdminController extends Coupon
             if (empty($_POST['end_date']) || $_POST['end_date'] <= $_POST['start_date']) {
                 $errors['end_date'] = 'Vui lòng chọn ngày kết thúc và phải lớn hơn ngày bắt đầu';
             }
-
             $_SESSION['errors'] = $errors;
             if (count($errors) > 0) {
                 $_SESSION['error'] = 'Vui lòng nhập đầy đủ dữ liệu';

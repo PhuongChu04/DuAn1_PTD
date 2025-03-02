@@ -14,13 +14,13 @@ class WithListController extends Wishlist{
             header('Location:?act=register');
             exit();
         }
-        $checkWishList =  $this->checkWishList();
+        $checkWishList =  $this->checkWishList();//sp đã tồn tại trong danh sách yth chxchx
         if ($checkWishList) {
-            $_SESSION['error'] = 'Sản phẩm này đã co trong danh mục yêu thích của bạn';
+            $_SESSION['error'] = 'Sản phẩm này đã có trong danh mục yêu thích của bạn';
             header('Location:'. $_SERVER['HTTP_REFERER']);
             exit();
         }
-        $addWishList = $this->addWishList();
+        $addWishList = $this->addWishList();//nếu chx
         if ($addWishList) {
             $_SESSION['success'] = "Thêm sản phẩm yêu thích thành công";
             header("Location:". $_SERVER['HTTP_REFERER']);

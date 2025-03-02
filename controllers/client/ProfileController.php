@@ -23,7 +23,7 @@ class ProfileController extends User{
             $_SESSION['errors'] = $errors;
            $user = $this->updateUser($_POST['name'], $_POST['email'], $_POST['phone'], $_POST['address']);
            if ($user) {
-            $_SESSION['user'] =$this->getUserById($_SESSION['user']['user_id']);
+            $_SESSION['user'] =$this->getUserById($_SESSION['user']['user_id']);// lấy thông tin ng dùng từ db theo id r lưu vào session
             $_SESSION['success'] = 'Cập nhật thông tin thành công';
             header('Location:'.$_SERVER['HTTP_REFERER']);
             exit();
