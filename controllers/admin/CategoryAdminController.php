@@ -109,11 +109,11 @@ class CategoryAdminController extends Category
             $_SESSION['error'] = 'Xóa danh mục thất bại, Vui lòng thử lại';
             header('Location:' . $_SERVER['HTTP_REFERER']);
             exit();
-        }
+        }   
     }
     public function getCategoryImages() {
-        $category1 = $this->getCategoryById(10);
-        $category2 = $this->getCategoryById(12);
+        $category1 = $this->getCategoryById(13);
+        $category2 = $this->getCategoryById(14);
         $category3 = $this->getCategoryById(11);
         return compact('category1', 'category2', 'category3'); // Trả về mảng chứa 3 danh mục
     }

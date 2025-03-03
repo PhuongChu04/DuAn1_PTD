@@ -208,7 +208,7 @@
 
       <div class="logo">
         <a href="?act=index">
-          <img src="client/images/logo.png" alt="Uomo" class="logo__image d-block">
+          <img src="client/images/ptd-removebg-preview.png" alt="Uomo" class="logo__image d-block" width="50px">
         </a>
       </div><!-- /.logo -->
 
@@ -435,7 +435,7 @@
       <div class="header-desk header-desk_type_1">
         <div class="logo">
           <a href="?act=index">
-            <img src="client/images/logo.png" alt="Uomo" class="logo__image d-block">
+            <img src="client/images/ptd-removebg-preview.png" alt="Uomo" class="logo__image d-block" width="50px">
           </a>
         </div>
 

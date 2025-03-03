@@ -141,9 +141,10 @@
             </div>
             </form>
             <div class="product-single__addtolinks">
-                <a href="?act=wishlist-add&product_id=<?= $productDetail['product_id'] ?>" class="menu-link menu-link_us-s add-to-wishlist"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- <a href="?act=wishlist-add&product_id=<?= $productDetail['product_id'] ?>" class="menu-link menu-link_us-s add-to-wishlist"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <use href="#icon_heart" />
-                    </svg><span>Yêu Thích</span></a>
+                        
+                    </svg>Yêu Thích</a> -->
                 <share-button class="share-button">
                     <button class="menu-link menu-link_us-s to-share border-0 bg-transparent d-flex align-items-center">
                         <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -56,7 +56,7 @@
           <!-- ========== Topbar Start ========== -->
           <header class="topbar">
                <div class="container-fluid">
-                    <div class="navbar-header">
+                    <div class="navbar-header" >
                          <div class="d-flex align-items-center">
                               <!-- Menu Toggle Button -->
                               <div class="topbar-item">
@@ -479,15 +479,14 @@
           <div class="main-nav">
                <!-- Sidebar Logo -->
                <div class="logo-box">
-                    <a href="index.html" class="logo-dark">
-                         <img src="admin/assets_admin/images/logo-sm.png" class="logo-sm" alt="logo sm">
-                         <img src="admin/assets_admin/images/logo-dark.png" class="logo-lg" alt="logo dark">
+                    <a href="?act=admin" class="logo-dark">
+                    <img src="client/images/ptd-removebg-preview.png" alt="Uomo" class="logo__image d-block" width="50px">
                     </a>
 
-                    <a href="index.html" class="logo-light">
-                         <img src="admin/assets_admin/images/logo-sm.png" class="logo-sm" alt="logo sm">
-                         <img src="admin/assets_admin/images/logo-light.png" class="logo-lg" alt="logo light">
+                    <a href="?act=admin" class="logo-light">
+                    <img src="client/images/ptd-removebg-preview.png" alt="Uomo" class="logo__image d-block" width="50px">
                     </a>
+
                </div>
 
                <!-- Menu Toggle Button (sm-hover) -->

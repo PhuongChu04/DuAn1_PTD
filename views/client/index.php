@@ -186,7 +186,8 @@ $categories = $categoryController->getCategoryImages();
                     <img loading="lazy" src="../public/images/product/<?= $pro['product_image'] ?>"  width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img">
                     <!-- <img loading="lazy" src="client/images/products/product_1-1.jpg" width="330" height="400" alt="Cropped Faux leather Jacket" class="pc__img pc__img-second"> -->
                   </a>
-                  <button class="pc__atc btn anim_appear-bottom btn position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside" data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
+                  <a href="?act=product_detail&slug=<?=$pro['product_slug']?>" class="pc__atc btn anim_appear-bottom btn position-absolute border-0" data-aside="cartDrawer" title="Add To Cart" name="add_to_cart">Add To Cart</a>
+                  
                 </div>
 
                 <div class="pc__info position-relative">
@@ -207,9 +208,9 @@ $categories = $categoryController->getCategoryImages();
                     <span class="reviews-note text-lowercase text-secondary ms-1">0 reviews</span>
                   </div>
 
-                  <a href="?act=wishlist-add&product_id=<?= $pro['product_id'] ?>" class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
-                  </a>
+                    <a href="?act=wishlist-add&product_id=<?= $pro['product_id'] ?>" class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist" title="Add To Wishlist">
+                      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#icon_heart" /></svg>
+                    </a>
                 </div>
               </div>
             </div>

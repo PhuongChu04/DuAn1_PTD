@@ -3,8 +3,8 @@
       <div class="row row-cols-lg-5 row-cols-2">
         <div class="footer-column footer-store-info col-12 mb-4 mb-lg-0">
           <div class="logo">
-            <a href="index.html">
-              <img src="client/images/logo.png" alt="Uomo" class="logo__image d-block">
+            <a href="?act=index">
+              <img src="client/images/ptd-removebg-preview.png" alt="Uomo" class="logo__image d-block" width="50px">
             </a>
           </div><!-- /.logo -->
           <p class="footer-address">20 Trịnh Văn Bô - Phương Canh - Nam Từ Niêm -Hà NộiNội </p>

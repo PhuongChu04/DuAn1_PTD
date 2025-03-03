@@ -45,61 +45,96 @@ switch ($action) {
         $authAdmin->singin();
         break;
     case 'logout-admin':
+
         $authAdmin->logout();
         break;
     case 'admin':
-        // $authAdmin->middLeware();
+        $authAdmin->middLeware();
         include '../views/admin/index.php';
         break;
     case 'product':
+        $authAdmin->middLeware();
+
         $productAdmin->index();
         break;
     case 'product-create':
+        $authAdmin->middLeware();
+
         $productAdmin->create();
         break;
     case 'product-store':
+        $authAdmin->middLeware();
+
         $productAdmin->store();
         break;
     case 'product-edit':
+        $authAdmin->middLeware();
+
         $productAdmin->edit();
         break;
     case 'product-update':
+        $authAdmin->middLeware();
+
         $productAdmin->update();
         break;
     case 'gallery-delete':
+        $authAdmin->middLeware();
+
         $productAdmin->deleteGallery();
         break;
     case 'product-variant-delete':
+        $authAdmin->middLeware();
+
         $productAdmin->deleteProductVariant();
         break;
     case 'product-delete':
+        $authAdmin->middLeware();
+
         $productAdmin->deleteProduct();
         break;
     case 'category':
+        $authAdmin->middLeware();
+
         $categoryAdmin->index();
         break;
     case 'category-create':
+        $authAdmin->middLeware();
+
         $categoryAdmin->addCategory();
         break;
     case 'category-edit':
+        $authAdmin->middLeware();
+
         $categoryAdmin->updateCategory();
         break;
     case 'category-delete':
+        $authAdmin->middLeware();
+
         $categoryAdmin->deleteCategory();
         break;
     case 'coupon':
+        $authAdmin->middLeware();
+
         $couponAdmin->index();
         break;
     case 'coupon-create':
+        $authAdmin->middLeware();
+
         $couponAdmin->create();
         break;
     case 'coupon-edit':
+        $authAdmin->middLeware();
+
         $couponAdmin->edit();
         break;
     case 'coupon-update':
+        $authAdmin->middLeware();
+
         $couponAdmin->update();
         break;
     case 'coupon-delete':
+        $authAdmin->middLeware();
+
         $couponAdmin->delete();
         break;
 
