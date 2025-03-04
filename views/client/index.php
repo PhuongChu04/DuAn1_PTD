@@ -30,16 +30,16 @@ $categories = $categoryController->getCategoryImages();
             </div>
             <!-- <p class="slideshow_markup font-special text-uppercase position-absolute end-0 bottom-0">Summer</p> -->
             <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-              <img loading="lazy" src="client/images/slideshow-character1.png" width="400" height="733" alt="Woman Fashion 1" class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 h-auto w-auto">
+              <img loading="lazy" src="client/images/ptd2.png" width="400" height="733" alt="Woman Fashion 1" class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 h-auto w-auto">
               <div class="character_markup">
-                <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Summer</p>
+                <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Mùa hè</p>
               </div>
             </div>
             <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-              <h6 class="text_dash text-uppercase text-red fs-base fw-medium animate animate_fade animate_btt animate_delay-3">New Trend</h6>
-              <h2 class="text-uppercase h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Summer Sale Stylish</h2>
-              <h2 class="text-uppercase h1 fw-bold animate animate_fade animate_btt animate_delay-5">Womens</h2>
-              <a href="shop1.html" class="btn-link btn-link_lg default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Discover More</a>
+              <h6 class="text_dash text-uppercase text-red fs-base fw-medium animate animate_fade animate_btt animate_delay-3">Sản phẩm hot</h6>
+              <h2 class="text-uppercase h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Thời trang mùa hè</h2>
+              <h2 class="text-uppercase h1 fw-bold animate animate_fade animate_btt animate_delay-5">Mens</h2>
+              <!-- <a href="shop1.html" class="btn-link btn-link_lg default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-7">Discover More</a> -->
             </div>
           </div>
         </div><!-- /.slideshow-item -->
@@ -50,13 +50,14 @@ $categories = $categoryController->getCategoryImages();
               <img loading="lazy" src="client/images/slideshow-pattern.png" width="1761" height="778" alt="Pattern" class="slideshow-bg__img object-fit-cover">
             </div>
             <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-              <img loading="lazy" src="client/images/slideshow-character2.png" width="400" height="690" alt="Woman Fashion 2" class="slideshow-character__img animate animate_fade animate_rtl animate_delay-10 h-auto w-auto">
+              <img loading="lazy" src="client/images/ptd1.png" width="400" height="690" alt="Woman Fashion 2" class="slideshow-character__img animate animate_fade animate_rtl animate_delay-10 h-auto w-auto">
             </div>
             <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-              <h6 class="text_dash text-uppercase text-red fs-base fw-medium animate animate_fade animate_btt animate_delay-3">Summer 2024</h6>
-              <h2 class="text-uppercase h1 fw-bold animate animate_fade animate_btt animate_delay-3">Hello New Season</h2>
-              <h6 class="text-uppercase mb-5 animate animate_fade animate_btt animate_delay-3">Limited Time Offer - Up to 60% off & Free Shipping</h6>
-              <a href="shop1.html" class="btn-link btn-link_lg default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-3">Discover More</a>
+              <h6 class="text_dash text-uppercase text-red fs-base fw-medium animate animate_fade animate_btt animate_delay-3">Mùa hè 2025</h6>
+              <h2 class="text-uppercase h1 fw-bold animate animate_fade animate_btt animate_delay-3">Sản phẩm mới</h2>
+              <h6 class="text-uppercase mb-5 animate animate_fade animate_btt animate_delay-3">
+              Khuyến mãi có thời hạn - Giảm giá tới 60% và Miễn phí vận chuyển</h6>
+              <!-- <a href="shop1.html" class="btn-link btn-link_lg default-underline text-uppercase fw-medium animate animate_fade animate_btt animate_delay-3">Discover More</a> -->
             </div>
           </div>
         </div><!-- /.slideshow-item -->

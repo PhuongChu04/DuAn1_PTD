@@ -482,7 +482,7 @@
               <a href="about.html" class="navigation__link">About</a>
             </li> -->
             <li class="navigation__item">
-              <a href="contact.html" class="navigation__link">Liên hệ</a>
+              <a href="#" class="navigation__link">Liên hệ</a>
             </li>
           </ul><!-- /.navigation__list -->
         </nav><!-- /.navigation -->

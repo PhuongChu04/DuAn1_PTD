@@ -114,7 +114,7 @@ class CategoryAdminController extends Category
     public function getCategoryImages() {
         $category1 = $this->getCategoryById(13);
         $category2 = $this->getCategoryById(14);
-        $category3 = $this->getCategoryById(11);
+        $category3 = $this->getCategoryById(15);
         return compact('category1', 'category2', 'category3'); // Trả về mảng chứa 3 danh mục
     }
     
